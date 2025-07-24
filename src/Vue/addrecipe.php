@@ -1,7 +1,11 @@
+<?php
+unset($_COOKIE['ErrorAddingRecipe']);
+?>
+
 <section class="container my-4">
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <div class="mb-3">
-            <label for="rname" class="form-label">Recipe Name</label>
+            <label for="rname" class="form-label">Recipe's Name</label>
             <input type="text" class="form-control" id="rname" name="rname" placeholder="" required maxlength="50">
         </div>
         <div class="mb-3">

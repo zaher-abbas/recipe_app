@@ -2,12 +2,14 @@
 
 namespace App\Model;
 
+use App\Exception\UserAlreadyExists;
 use App\Exception\UserNotFound;
 use App\Exception\WrongPassword;
 use PDO;
 
 require_once './../Exception/UserNotFound.php';
 require_once './../Exception/WrongPassword.php';
+require_once './../Exception/UserAlreadyExists.php';
 
 class User
 {
@@ -24,12 +26,16 @@ class User
     {
         $query = "INSERT INTO user (firstName, lastName, email, password) VALUES
                                    (:firstName, :lastName, :email, :password)";
-        $statement = $this->db->prepare($query);
-        $statement->bindValue(':firstName', $firstName);
-        $statement->bindValue(':lastName', $lastName);
-        $statement->bindValue(':password', $password);
-        $statement->bindValue(':email', $email);
-        $statement->execute();
+        if (!$this->findBy($email)) {
+            $statement = $this->db->prepare($query);
+            $statement->bindValue(':firstName', $firstName);
+            $statement->bindValue(':lastName', $lastName);
+            $statement->bindValue(':password', $password);
+            $statement->bindValue(':email', $email);
+            $statement->execute();
+        }
+        else
+            throw new UserAlreadyExists("This user already exist!");
     }
 
     public function findBy(string $email): bool

@@ -1,0 +1,17 @@
+body {
+    background-color: #F8F6F0;
+}
+
+.bg-sage-light {
+    background-color: #F4F6F0;
+}
+.text-forest {
+    color: #34495E;
+}
+.recipe-card {
+    box-shadow: 5px 8px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+.recipe-card:hover {
+    transform: translateY(-2px);
+}

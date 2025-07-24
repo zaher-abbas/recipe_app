@@ -13,7 +13,7 @@ $connected = $user != "Guest";
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse">
                 <?php
                 if ($connected) {
                     echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
@@ -26,26 +26,26 @@ $connected = $user != "Guest";
                     </ul>";
                 }
                 ?>
-                <span class="d-flex gap-3 justify-content-evenly align-items-center" data-bs-theme="dark">
+                <ul class="d-flex align-items-center justify-content-evenly gap-3" data-bs-theme="dark">
                     <?php
                     if (!$connected) {
-                        echo " <span>
+                        echo " <span class='nav-item'>
                                 <a class='nav-link' href='?action=register'>Register</a>
                         </span>
-                        <span>
+                        <span class='nav-item'>
                                 <a class='nav-link' href='?action=login'>Login</a>
                         </span>";
                     } else {
                         echo "
                          <span><strong>$user</strong></span>
-                         <span>
+                         <span class='nav-item'>
                                 <a class='nav-link' href='logout.php'>Log-out</a>
                         </span>";
 
                     }
                     ?>
 
-                </span>
+                </ul>
             </div>
         </div>
     </nav>

@@ -8,7 +8,7 @@ use PDOException;
 class Database
 {
     private const HOST = 'localhost';
-    private const DBNAME = 'recette';
+    private const DBNAME = 'recipe-app';
     private const USER = 'zaher';
     private const PASSWORD = '6666';
 

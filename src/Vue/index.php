@@ -7,7 +7,6 @@ require_once 'header.php';
 use App\config\Database;
 use App\Controller\RecipeController;
 use App\Controller\UserController;
-
 $db = Database::getConnection();
 $userController = new UserController($db);
 $recipeController = new RecipeController($db);
@@ -15,11 +14,7 @@ $action = $_GET['action'] ?? 'home';
 
 switch ($action) {
     case 'register':
-        try {
-            $userController->register();
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+        $userController->register();
         break;
     case 'login':
         $userController->login();
@@ -28,6 +23,9 @@ switch ($action) {
         $recipeController->addRecipe();
         break;
     case 'home':
+        $recipeController->getRecipes();
+        break;
+    default:
         require_once 'dashboard.php';
         break;
 }
@@ -38,8 +36,9 @@ switch ($action) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Recipe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Recipe - App</title>
 </head>
-<body>
+<body class="bg-body-secondary">
 </body>
 </html>

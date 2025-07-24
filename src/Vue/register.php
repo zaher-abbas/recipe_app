@@ -17,6 +17,12 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" required minlength="8">
         </div>
+        <?php
+        if (isset($_COOKIE['UserAlreadyExists'])) {
+            echo "<div class='form-text alert alert-danger'>" . $_COOKIE['UserAlreadyExists'] . "</div>";
+            unset($_COOKIE['UserAlreadyExists']);
+        }
+        ?>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </section>

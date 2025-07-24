@@ -25,4 +25,11 @@ class Recipe
         $statement->bindValue(':description', $description);
         $statement->execute();
     }
+
+    public function getRecipes(): array|null
+    {
+     $query = "SELECT recipe.*, firstname, lastname FROM recipe JOIN user u ON u.id = recipe.user_id";
+     $statement = $this->db->query($query);
+     return $statement->fetchAll() ?? null;
+    }
 }
