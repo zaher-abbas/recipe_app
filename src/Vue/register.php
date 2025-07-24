@@ -1,5 +1,6 @@
-<section>
-    <form class="container my-4" action="" method="post">
+<section class="container">
+    <h1 class="text-center alert alert-light">Register A New Account</h1>
+    <form class="my-4" action="" method="post">
         <div class="mb-3">
             <label for="firstname" class="form-label">First Name</label>
             <input type="text" class="form-control" id="firstname" name="firstname" required maxlength="20">
@@ -23,6 +24,8 @@
             unset($_COOKIE['UserAlreadyExists']);
         }
         ?>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="text-center">
+        <button type="submit" class="btn btn-success">Register</button>
+        </div>
     </form>
 </section>

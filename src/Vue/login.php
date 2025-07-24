@@ -1,4 +1,5 @@
 <section class="container my-4">
+    <h1 class="text-center alert alert-light">Log-in to your account</h1>
     <form action="" method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
@@ -21,7 +22,9 @@
             unset($_COOKIE['WrongPassword']);
         }
         ?>
-        <button type="submit" class="btn btn-primary">Log-in</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Log-in</button>
+        </div>
     </form>
 </section>
 

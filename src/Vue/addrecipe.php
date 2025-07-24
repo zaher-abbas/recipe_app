@@ -3,6 +3,7 @@ unset($_COOKIE['ErrorAddingRecipe']);
 ?>
 
 <section class="container my-4">
+    <h1 class="text-center alert alert-light">Add A New Recipe</h1>
     <form method="post" action="" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="rname" class="form-label">Recipe's Name</label>
@@ -22,6 +23,8 @@ unset($_COOKIE['ErrorAddingRecipe']);
             unset($_COOKIE['ErrorAddingRecipe']);
         }
         ?>
-        <button type="submit" class="btn btn-primary">Add Recipe</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Add Recipe</button>
+        </div>
     </form>
 </section>

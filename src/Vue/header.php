@@ -26,7 +26,7 @@ $connected = $user != "Guest";
                     </ul>";
                 }
                 ?>
-                <ul class="d-flex align-items-center justify-content-evenly gap-3" data-bs-theme="dark">
+                <span class="d-flex align-items-center justify-content-evenly gap-4" data-bs-theme="dark">
                     <?php
                     if (!$connected) {
                         echo " <span class='nav-item'>
@@ -45,7 +45,7 @@ $connected = $user != "Guest";
                     }
                     ?>
 
-                </ul>
+                </span>
             </div>
         </div>
     </nav>
