@@ -22,8 +22,8 @@ class User
     //Operation CRUD Create:
     public function createUser(string $firstName, string $lastName, string $password, string $email): void
     {
-        $query = "INSERT INTO user (firstName, lastName, password, email) VALUES
-                                   (:firstName, :lastName, :password, :email)";
+        $query = "INSERT INTO user (firstName, lastName, email, password) VALUES
+                                   (:firstName, :lastName, :email, :password)";
         $statement = $this->db->prepare($query);
         $statement->bindValue(':firstName', $firstName);
         $statement->bindValue(':lastName', $lastName);
@@ -55,6 +55,6 @@ class User
         if (!password_verify($password, $user["password"])) {
             throw new WrongPassword("Password incorrect");
         }
-        return [$user["firstname"], $user["lastname"]];
+        return [$user["firstname"], $user["lastname"], $user["id"]];
     }
 }
