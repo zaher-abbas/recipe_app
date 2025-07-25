@@ -1,6 +1,6 @@
-<section class="container">
+<section class="container my-4">
     <h1 class="text-center alert alert-light">Register A New Account</h1>
-    <form class="my-4" action="" method="post">
+    <form action="" method="post">
         <div class="mb-3">
             <label for="firstname" class="form-label">First Name</label>
             <input type="text" class="form-control" id="firstname" name="firstname" required maxlength="20">

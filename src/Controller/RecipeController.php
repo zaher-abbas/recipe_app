@@ -44,4 +44,13 @@ class RecipeController
         $recipes = $this->recipe->getRecipes();
         require_once './../Vue/dashboard.php';
     }
+
+    public function getRecipeById (): void
+    {
+        $id = $_GET['id'] ?? null;
+        if ($id) {
+            $recipe = $this->recipe->getRecipeById($id);
+            require_once './../Vue/recipe.php';
+        }
+    }
 }

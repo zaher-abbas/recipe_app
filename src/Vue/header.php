@@ -30,16 +30,16 @@ $connected = $user != "Guest";
                     <?php
                     if (!$connected) {
                         echo " <span class='nav-item'>
-                                <a class='nav-link' href='?action=register'>Register</a>
+                                <a class='nav-link text-light' href='?action=register'>Register</a>
                         </span>
                         <span class='nav-item'>
-                                <a class='nav-link' href='?action=login'>Login</a>
+                                <a class='nav-link text-light' href='?action=login'>Login</a>
                         </span>";
                     } else {
                         echo "
-                         <span><strong>$user</strong></span>
+                         <span class='text-light'><strong>$user</strong></span>
                          <span class='nav-item'>
-                                <a class='nav-link' href='logout.php'>Log-out</a>
+                                <a class='nav-link text-bg-danger p-1 rounded-1' href='logout.php'>Log-out</a>
                         </span>";
 
                     }

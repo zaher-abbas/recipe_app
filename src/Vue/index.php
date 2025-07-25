@@ -24,6 +24,8 @@ switch ($action) {
         break;
     case 'home':
         $recipeController->getRecipes();
+    case 'recipe':
+        $recipeController->getRecipeById();
         break;
     default:
         require_once 'dashboard.php';

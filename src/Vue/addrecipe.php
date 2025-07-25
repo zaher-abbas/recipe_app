@@ -15,7 +15,7 @@ unset($_COOKIE['ErrorAddingRecipe']);
         </div>
         <div class="mb-3">
             <label for="rdescription" class="form-label">Recipe Description</label>
-            <textarea class="form-control" id="rdescription" name="rdescription" rows="3" required></textarea>
+            <textarea class="form-control" id="rdescription" name="rdescription" rows="8" required></textarea>
         </div>
         <?php
         if (isset($_COOKIE['ErrorAddingRecipe'])) {

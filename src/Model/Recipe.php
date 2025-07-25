@@ -32,4 +32,13 @@ class Recipe
      $statement = $this->db->query($query);
      return $statement->fetchAll() ?? null;
     }
+
+    public function getRecipeById(int $id): array|null
+    {
+        $query = "SELECT recipe.*, firstname, lastname FROM recipe JOIN user u ON u.id = recipe.user_id WHERE recipe.id = :id";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+        return $statement->fetch() ?? null;
+    }
 }
