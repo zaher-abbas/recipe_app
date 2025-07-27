@@ -5,12 +5,12 @@ namespace App\config;
 use PDO;
 use PDOException;
 
-class Database
+final class MySQL
 {
-    private const HOST = 'localhost';
-    private const DBNAME = 'recipe-app';
-    private const USER = 'zaher';
-    private const PASSWORD = '6666';
+    private const string HOST = 'localhost';
+    private const string DBNAME = 'recipe-app';
+    private const string USER = 'zaher';
+    private const string PASSWORD = '6666';
 
     public static function getConnection(): ?PDO
     {

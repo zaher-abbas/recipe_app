@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 use App\Model\Recipe;
+use App\Model\Comment;
 
 require_once './../Model/Recipe.php';
+require_once './../Model/Comment.php';
 
 class RecipeController
 {
     private Recipe $recipe;
-    public array $recipes;
+    private Comment $comment;
     public function __construct($db)
     {
         $this->recipe = new Recipe($db);
@@ -40,16 +42,25 @@ class RecipeController
         require_once './../Vue/addrecipe.php';
     }
 
-    public function getRecipes(): void {
+    public function showAllRecipes(): void {
         $recipes = $this->recipe->getRecipes();
         require_once './../Vue/dashboard.php';
     }
 
-    public function getRecipeById (): void
+    public function showRecipeDetails (): void
     {
         $id = $_GET['id'] ?? null;
         if ($id) {
+            $this->comment = new Comment();
             $recipe = $this->recipe->getRecipeById($id);
+            $comments = $this->comment->getCommentsByRecipeId($id);
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $comment = isset($_POST["comment"]) ? trim($_POST['comment']) : null;
+                $note = isset($_POST["note"]) ? $_POST['note'] : null;
+                if ($comment && $note) {
+                    $this->comment->createComment($id, $_SESSION['userName'], $comment, $note);
+                }
+            }
             require_once './../Vue/recipe.php';
         }
     }

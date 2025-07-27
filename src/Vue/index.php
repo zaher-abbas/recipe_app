@@ -1,13 +1,13 @@
 <?php
-require_once './../config/Database.php';
+require_once './../config/MySQL.php';
 require_once './../Controller/UserController.php';
 require_once './../Controller/RecipeController.php';
 require_once 'header.php';
 
-use App\config\Database;
+use App\config\MySQL;
 use App\Controller\RecipeController;
 use App\Controller\UserController;
-$db = Database::getConnection();
+$db = MySQL::getConnection();
 $userController = new UserController($db);
 $recipeController = new RecipeController($db);
 $action = $_GET['action'] ?? 'home';
@@ -23,9 +23,9 @@ switch ($action) {
         $recipeController->addRecipe();
         break;
     case 'home':
-        $recipeController->getRecipes();
+        $recipeController->showAllRecipes();
     case 'recipe':
-        $recipeController->getRecipeById();
+        $recipeController->showRecipeDetails();
         break;
     default:
         require_once 'dashboard.php';
@@ -41,6 +41,7 @@ switch ($action) {
     <link rel="stylesheet" href="css/style.css">
     <title>Recipe - App</title>
 </head>
-<body class="bg-body-secondary">
+<body>
 </body>
+<script src="js/bootstrap.bundle.min.js"></script>
 </html>

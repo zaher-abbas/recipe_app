@@ -5,9 +5,9 @@ $connected = $user != "Guest";
 ?>
 
 <header>
-    <nav class="navbar navbar-expand-md bg-primary p-4" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md p-4" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Recipe App</a>
+            <a class="navbar-brand" href="index.php">&#127860; MyRecipe</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -30,14 +30,14 @@ $connected = $user != "Guest";
                     <?php
                     if (!$connected) {
                         echo " <span class='nav-item'>
-                                <a class='nav-link text-light' href='?action=register'>Register</a>
+                                <a class='nav-link text-light' href='index.php?action=register'>Register</a>
                         </span>
                         <span class='nav-item'>
-                                <a class='nav-link text-light' href='?action=login'>Login</a>
+                                <a class='nav-link text-light' href='index.php?action=login'>Login</a>
                         </span>";
                     } else {
                         echo "
-                         <span class='text-light'><strong>$user</strong></span>
+                         <span class='text-light'><strong>&#128100; $user</strong></span>
                          <span class='nav-item'>
                                 <a class='nav-link text-bg-danger p-1 rounded-1' href='logout.php'>Log-out</a>
                         </span>";

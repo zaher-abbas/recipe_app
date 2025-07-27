@@ -1,5 +1,7 @@
 <?php
 /** @var array|null $recipe */
+/** @var array|null $comments */
+
 ?>
 
 <section class="container">
@@ -21,5 +23,51 @@
     </div>
 </div>
     <?php endif; ?>
+<form method="post" action="">
+    <h6>Rate this recipe and leave a comment:</h6>
+    <div class="mb-4">
+    <select class="form-select" aria-label="Default select example" name="note">
+        <option selected>Rate this recipe</option>
+        <option value="1">&#11088;</option>
+        <option value="2">&#11088; &#11088;</option>
+        <option value="3">&#11088; &#11088; &#11088; </option>
+        <option value="4">&#11088; &#11088; &#11088; &#11088;</option>
+        <option value="5">&#11088; &#11088; &#11088; &#11088; &#11088;</option>
+    </select>
+    </div>
+    <div class="mb-4">
+        <label for="comment" class="form-label">Recipe Description</label>
+        <textarea class="form-control" id="comment" name="comment" rows="6" required></textarea>
+    </div>
 
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+<?php if ($comments !== null): ?>
+<?php foreach ($comments as $comment): ?>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><?=$comment["author_name"]?> on <?= $comment["date"] ?></h5>
+                <?php switch ($comment["note"]) {
+                    case 1:
+                        echo "<p class='card-text'>	&#11088;</p>";
+                        break;
+                    case 2:
+                        echo "<p class='card-text'>	&#11088; &#11088;</p>";
+                        break;
+                    case 3:
+                        echo "<p class='card-text'>	&#11088; &#11088; &#11088;</p>";
+                        break;
+                    case 4:
+                        echo "<p class='card-text'>	&#11088; &#11088; &#11088; &#11088;</p>";
+                        break;
+                    case 5:
+                        echo "<p class='card-text'>	&#11088; &#11088; &#11088; &#11088; &#11088;</p>";
+                        break;
+                } ?>
+                <p class="card-text"><?=$comment["comment"]?></p>
+            </div>
+        </div>
+<?php endforeach; ?>
+<?php endif; ?>
 </section>

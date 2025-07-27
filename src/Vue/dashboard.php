@@ -32,6 +32,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <?php endif; ?>
 </div>
 <?php else: ?>
+    <!--
     <div class='container my-4 text-center'>
         <h2 class='alert alert-warning'>You Are Not Authorized!</h2>
         <h4 class='alert alert-info'>
@@ -42,4 +43,20 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
              <a href='index.php?action=login'><strong>Login</strong></a>
         </h4>
     </div>
+    !-->
+    <section class="hero-section my-3 p-4 container rounded-4">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">&#127860; Welcome to MyRecipe App</h1>
+                    <p class="lead mb-5">View recipes from all over the world, shared by everyone, you can add yours too!</p>
+                    <p class="lead mb-5">Try it...it is Fun!</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="index.php?action=register" class="btn btn-light btn-lg px-4 py-2">Register</a>
+                        <a href="index.php?action=login" class="btn btn-outline-light btn-lg px-4 py-2">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php endif; ?>
