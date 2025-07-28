@@ -24,7 +24,7 @@
         </div>
     <?php endif; ?>
     <form method="post" action="" class="my-4 p-3 rounded">
-        <h6>Rate this recipe and leave a comment:</h6>
+        <h6 class="mb-4">Rate this recipe and leave a comment:</h6>
         <div class="mb-4">
             <select class="form-select" aria-label="Default select example" name="note">
                 <option selected>Rate this recipe</option>
@@ -45,7 +45,7 @@
 
     <?php if ($comments !== null): ?>
         <?php foreach ($comments as $comment): ?>
-            <div class="card mb-3">
+            <div class="card mb-4">
                 <div class="card-body">
                     <h5 class="card-title"><?= $comment["author_name"] ?> on <?= $comment["date"] ?></h5>
                     <?php switch ($comment["note"]) {

@@ -43,7 +43,7 @@ switch ($action) {
     <link rel="stylesheet" href="css/style.css">
     <title>Recipe - App</title>
 </head>
-<body>
+<body class="bg-dark-subtle">
 </body>
 <script src="js/bootstrap.bundle.min.js"></script>
 </html>

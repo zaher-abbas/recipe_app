@@ -5,9 +5,9 @@ $connected = $user != "Guest";
 ?>
 
 <header>
-    <nav class="navbar navbar-expand-md p-4" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md p-4 text-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">&#127860; MyRecipe</a>
+            <a class="navbar-brand text-light" href="index.php">&#127860; MyRecipe</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -17,16 +17,16 @@ $connected = $user != "Guest";
                 <?php
                 if ($connected) {
                     echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-                        <li class='nav-item'>
-                            <a class='nav-link' aria-current='page' href='index.php?action=home'>Home</a>
+                        <li class='nav-item me-2'>
+                            <a class='nav-link text-light' aria-current='page' href='index.php?action=home'>Home</a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link' href='index.php?action=addrecipe'>Add Recipe</a>
+                            <a class='nav-link text-light' href='index.php?action=addrecipe'>Add Recipe</a>
                         </li>
                     </ul>";
                 }
                 ?>
-                <span class="d-flex align-items-center justify-content-evenly gap-4" data-bs-theme="dark">
+                <span class="d-flex align-items-center justify-content-evenly gap-4">
                     <?php
                     if (!$connected) {
                         echo " <span class='nav-item'>
