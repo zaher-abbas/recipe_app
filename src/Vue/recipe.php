@@ -26,8 +26,8 @@
     <form method="post" action="" class="my-4 p-3 rounded">
         <h6 class="mb-4">Rate this recipe and leave a comment:</h6>
         <div class="mb-4">
-            <select class="form-select" aria-label="Default select example" name="note">
-                <option selected>Rate this recipe</option>
+            <select class="form-select" aria-label="Default select example" name="note" required>
+                <option selected disabled>Rate this recipe</option>
                 <option value="1">&#11088;</option>
                 <option value="2">&#11088; &#11088;</option>
                 <option value="3">&#11088; &#11088; &#11088;</option>

@@ -6,8 +6,8 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 ?>
 <?php if ($user != ""): ?>
     <div class='container my-4'>
-        <h1 class="text-center mb-4">Dashboard — Recipe App</h1>
-        <h3 class="text-center">Welcome <?= htmlspecialchars($user) ?></h3>
+        <h1 class="text-center mb-4 display-4 fw-bold">Dashboard - &#127860; MyRecipe</h1>
+        <h3 class="text-center">Welcome &#128100;<?= htmlspecialchars($user) ?></h3>
     </div>
 <?php if ($recipes != null):?>
 <div class="container">
@@ -20,7 +20,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
         <h5 class="card-title fw-bold"><?=htmlspecialchars($recipe['name']) ?></h5>
         <p class="card-text">This recipe is submitted by <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?></p>
          <div class="text-center my-4">
-         <a href="index.php?action=recipe&id=<?=$recipe['id']?>" class="btn btn-success w-50">Check this recipe!</a>
+         <a href="index.php?action=recipe&id=<?=$recipe['id']?>" class="btn btn-success w-50">Check this Recipe!</a>
          </div>
       </div>
        <div class="card-footer">
