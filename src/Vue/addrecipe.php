@@ -24,7 +24,7 @@ unset($_COOKIE['ErrorAddingRecipe']);
         }
         ?>
         <div class="text-center">
-            <button type="submit" class="btn">Add Recipe</button>
+            <button type="submit" class="btn btn-success">Add Recipe</button>
         </div>
     </form>
 </section>
