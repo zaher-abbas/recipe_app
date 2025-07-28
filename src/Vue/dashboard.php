@@ -24,7 +24,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
          </div>
       </div>
        <div class="card-footer">
-        <small class="text-body-secondary">Last updated 3 mins ago</small>
+        <small class="text-body-secondary">Submitted on <?=$recipe['created_at'] ?></small>
       </div>
     </div>
   </div>

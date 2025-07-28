@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Model\Recipe;
 use App\Model\Comment;
 
@@ -11,12 +12,14 @@ class RecipeController
 {
     private Recipe $recipe;
     private Comment $comment;
+
     public function __construct($db)
     {
         $this->recipe = new Recipe($db);
     }
 
-    public function addRecipe(): void {
+    public function addRecipe(): void
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $rname = isset($_POST['rname']) ? trim($_POST['rname']) : null;
             $rimage = $_FILES['rimage'] ?? null;
@@ -32,8 +35,7 @@ class RecipeController
                 move_uploaded_file($rimage['tmp_name'], $folderName . $image_name);
                 $this->recipe->createRecipe($_SESSION['userId'], $rname, $image_name, $rdescription);
                 header('Location: index.php?action=home');
-            }
-            else {
+            } else {
                 setcookie("ErrorAddingRecipe", "Error; Please fill all the fields before submitting!");
                 $_COOKIE["ErrorAddingRecipe"] = "Error; Please fill all the fields before submitting!";
             }
@@ -42,12 +44,13 @@ class RecipeController
         require_once './../Vue/addrecipe.php';
     }
 
-    public function showAllRecipes(): void {
+    public function showAllRecipes(): void
+    {
         $recipes = $this->recipe->getRecipes();
         require_once './../Vue/dashboard.php';
     }
 
-    public function showRecipeDetails (): void
+    public function showRecipeDetails(): void
     {
         $id = $_GET['id'] ?? null;
         if ($id) {
@@ -59,6 +62,7 @@ class RecipeController
                 $note = isset($_POST["note"]) ? $_POST['note'] : null;
                 if ($comment && $note) {
                     $this->comment->createComment($id, $_SESSION['userName'], $comment, $note);
+                    header('Location: index.php?action=recipe&id=' . $id);
                 }
             }
             require_once './../Vue/recipe.php';

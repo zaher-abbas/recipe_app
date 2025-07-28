@@ -7,6 +7,7 @@ require_once 'header.php';
 use App\config\MySQL;
 use App\Controller\RecipeController;
 use App\Controller\UserController;
+
 $db = MySQL::getConnection();
 $userController = new UserController($db);
 $recipeController = new RecipeController($db);
@@ -24,6 +25,7 @@ switch ($action) {
         break;
     case 'home':
         $recipeController->showAllRecipes();
+        break;
     case 'recipe':
         $recipeController->showRecipeDetails();
         break;
