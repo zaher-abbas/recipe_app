@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+    "mongodb/mongodb": "2.1.1",
     "ext-pdo": "*"
   }
 }
