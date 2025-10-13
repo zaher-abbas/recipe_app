@@ -8,7 +8,7 @@ require './../../vendor/autoload.php';
 final class MongoDB
 {
 
-    private const string DB_NAME = 'recipe-app';
+    private const DB_NAME = 'recipe-app';
     private static function getClient(): Client
     {
         // Utilise l'URI Atlas si défini, sinon localhost pour le dev

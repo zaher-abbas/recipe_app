@@ -9,7 +9,7 @@ require_once './../config/MongoDB.php';
 class Comment
 {
   private $dbCollection;
-  private const string COLLECTION_NAME = 'comment';
+  private const COLLECTION_NAME = 'comment';
 
   public function __construct() {
       $collectionName = self::COLLECTION_NAME;
