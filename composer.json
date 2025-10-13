@@ -1,11 +1,16 @@
 {
-  "require": {
-    "mongodb/mongodb": "^2.1",
-    "ext-pdo": "*"
-  },
-  "config": {
-    "platform": {
-      "php": "8.2.24"
+  "name": "vendor_name/recipe_app",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Administrateur",
+      "email": "email@example.com"
     }
+  ],
+  "require": {
+    "mongodb/mongodb": "2.1.1",
+    "ext-pdo": "*"
   }
 }
