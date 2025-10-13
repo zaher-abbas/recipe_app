@@ -30,8 +30,6 @@ class RecipeController
                 $image_name = $rimage['name'];
                 $image_name = time() . $image_name;
                 $folderName = './../img/';
-                // IMPORTANT: enregistrer sous src/Vue/img (dossier public)
-                $folderName = __DIR__ . '/../Vue/img/';
                 if (!is_dir($folderName)) {
                     mkdir($folderName, 0775, true);
                 }
