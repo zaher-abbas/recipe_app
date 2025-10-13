@@ -15,10 +15,22 @@ final class MySQL
     public static function getConnection(): ?PDO
     {
         try {
-            return new PDO("mysql:host=" . self::HOST . ";dbname=" . self::DBNAME, self::USER, self::PASSWORD);
+            // Lecture via variables d'environnement avec valeurs locales par défaut
+            $host = getenv('MYSQL_HOST') ?: self::HOST;
+            $dbname = getenv('MYSQL_DB') ?: self::DBNAME;
+            $user = getenv('MYSQL_USER') ?: self::USER;
+            $pass = getenv('MYSQL_PASSWORD') ?: self::PASSWORD;
+
+            $dsn = "mysql:host={$host};dbname={$dbname};charset=utf8mb4";
+            $pdo = new PDO($dsn, $user, $pass, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ]);
+            return $pdo;
         } catch (PDOException $e) {
             echo "Erreur : " . $e->getMessage();
         }
         return null;
     }
+
 }

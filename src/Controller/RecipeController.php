@@ -30,8 +30,12 @@ class RecipeController
                 $image_name = $rimage['name'];
                 $image_name = time() . $image_name;
                 $folderName = './../img/';
-                if (!is_dir($folderName))
-                    mkdir($folderName, 0777, true);
+                // IMPORTANT: enregistrer sous src/Vue/img (dossier public)
+                $folderName = __DIR__ . '/../Vue/img/';
+                if (!is_dir($folderName)) {
+                    mkdir($folderName, 0775, true);
+                }
+
                 move_uploaded_file($rimage['tmp_name'], $folderName . $image_name);
                 $this->recipe->createRecipe($_SESSION['userId'], $rname, $image_name, $rdescription);
                 header('Location: index.php?action=home');
