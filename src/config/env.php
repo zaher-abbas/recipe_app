@@ -31,5 +31,3 @@ define('DB_PASS', $config[$env]['DB_PASS']);
 define('DB_NAME', $config[$env]['DB_NAME']);
 define('MONGO_URI', $config[$env]['MONGO_URI']);
 define('MONGO_DB', $config[$env]['MONGO_DB']);
-
-
