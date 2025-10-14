@@ -25,9 +25,11 @@ $config = [
     ]
 ];
 
-if (!defined('DB_HOST')) define('DB_HOST', $config[$env]['DB_HOST']);
-if (!defined('DB_USER')) define('DB_USER', $config[$env]['DB_USER']);
-if (!defined('DB_PASS')) define('DB_PASS', $config[$env]['DB_PASS']);
-if (!defined('DB_NAME')) define('DB_NAME', $config[$env]['DB_NAME']);
-if (!defined('MONGO_URI')) define('MONGO_URI', $config[$env]['MONGO_URI']);
-if (!defined('MONGO_DB')) define('MONGO_DB', $config[$env]['MONGO_DB']);
+define('DB_HOST', $config[$env]['DB_HOST']);
+define('DB_USER', $config[$env]['DB_USER']);
+define('DB_PASS', $config[$env]['DB_PASS']);
+define('DB_NAME', $config[$env]['DB_NAME']);
+define('MONGO_URI', $config[$env]['MONGO_URI']);
+define('MONGO_DB', $config[$env]['MONGO_DB']);
+
+
