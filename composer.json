@@ -1,0 +1,15 @@
+{
+    "name": "administrateur/recipe_app",
+    "description": "Recipe App",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "^v2.1.x-dev",
+        "ext-pdo": "*"
+    },
+    "authors": [
+        {
+            "name": "Zaher ABBAS",
+            "email": "z.abbas83@yahoo.com"
+        }
+    ]
+}
