@@ -3,7 +3,7 @@
     "description": "Recipe App",
     "type": "project",
     "require": {
-        "mongodb/mongodb": "^v2.1.x-dev",
+        "mongodb/mongodb": "*",
         "ext-pdo": "*"
     },
     "authors": [
