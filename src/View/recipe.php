@@ -9,8 +9,8 @@
 
         <div class="card my-4">
             <div class="row g-0">
-                <div class="col-lg-4 col-md-4">
-                    <img src="<?= './../img/' . $recipe['image']; ?>" class="img-fluid rounded-start" alt="...">
+                <div class="col-lg-4 col-md-4 d-flex align-items-center">
+                    <img src="<?= './../View/img/' . $recipe['image']; ?>" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="card-body">

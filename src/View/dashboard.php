@@ -14,7 +14,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <?php foreach ($recipes as $recipe): ?>
   <div class="col">
     <div class="card recipe-card bg-sage-light text-forest border border-secondary-subtle border-start-0 rounded-end border-4 mb-3 p-4">
-      <img src="./../img/<?=$recipe['image']?>" class="card-img-top rounded-start w-100 fixed-img" alt="">
+      <img src="./../View/img/<?=$recipe['image']?>" class="card-img-top rounded-start w-100 fixed-img" alt="">
       <div class="card-body">
         <h5 class="card-title fw-bold"><?=htmlspecialchars($recipe['name']) ?></h5>
         <p class="card-text">Submitted by <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?></p>
