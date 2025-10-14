@@ -6,9 +6,8 @@
 
 <section class="container">
     <?php if ($recipe !== null): ?>
-
-        <div class="card my-4">
-            <div class="row g-0">
+        <div class="card my-4 recipe-details p-3">
+            <div class="row g-1">
                 <div class="col-lg-4 col-md-4 d-flex align-items-center">
                     <img src="<?= './../View/img/' . $recipe['image']; ?>" class="img-fluid rounded-start" alt="...">
                 </div>
@@ -16,8 +15,7 @@
                     <div class="card-body">
                         <h3 class="card-title"><?= htmlspecialchars($recipe['name']) ?></h3>
                         <h6 class="card-title mb-4"><?= 'Submitted by: ' . htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) . ' on ' . $recipe['created_at'] ?></h6>
-                        <p class="card-text"><?= htmlspecialchars($recipe['description']) ?></p>
-
+                        <p class="card-text"><?= htmlspecialchars($recipe['description'])?></p>
                     </div>
                 </div>
             </div>

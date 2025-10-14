@@ -41,5 +41,10 @@ input {
     object-fit: fill;
 }
 
+.recipe-details p{
+   white-space: pre-wrap;
+
+}
+
 
 
