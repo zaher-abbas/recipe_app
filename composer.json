@@ -1,0 +1,13 @@
+{
+    "name": "administrateur/recipe_app",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": ">=2.1.1"
+    },
+    "authors": [
+        {
+            "name": "Zaher ABBAS",
+            "email": "z.abbas83@yahoo.com"
+        }
+    ]
+}
