@@ -71,4 +71,23 @@ class UserController
         }
         require_once './../Vue/login.php';
     }
+
+    public function profile(): void
+    {
+        $user = [];
+        try {
+            if (isset($_SESSION['userId'])) {
+                $user = $this->user->getUserById($_SESSION['userId']);
+            }
+            else
+            {
+                header('Location: index.php?action=login');
+            }
+        }
+        catch (UserNotFound $e)
+        {
+            header('Location: index.php?action=login');
+        }
+        require_once './../Vue/profile.php';
+    }
 }

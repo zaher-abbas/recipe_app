@@ -13,6 +13,11 @@ require_once './../Exception/UserAlreadyExists.php';
 
 class User
 {
+    private int $id;
+   private string $firstname;
+   private string $lastname;
+    private string $email;
+    private string $password;
 
     private PDO $db;
 
@@ -61,6 +66,19 @@ class User
         if (!password_verify($password, $user["password"])) {
             throw new WrongPassword("Password incorrect");
         }
-        return [$user["firstname"], $user["lastname"], $user["id"]];
+       return $user;
+    }
+
+    public function getUserById(int $id): array
+    {
+        $query = "SELECT * FROM user WHERE id = :id";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+        $user = $statement->fetch();
+        if (!$user) {
+            throw new UserNotFound("User not found");
+        }
+        return $user;
     }
 }

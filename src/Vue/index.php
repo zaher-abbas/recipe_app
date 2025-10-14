@@ -26,6 +26,9 @@ switch ($action) {
     case 'home':
         $recipeController->showAllRecipes();
         break;
+    case 'profile':
+        $userController->profile();
+        break;
     case 'recipe':
         $recipeController->showRecipeDetails();
         break;

@@ -7,7 +7,6 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <?php if ($user != ""): ?>
     <div class='container my-4'>
         <h1 class="text-center mb-4 display-4 fw-bold">Dashboard - &#127860; MyRecipe</h1>
-        <h3 class="text-center">Welcome &#128100;<?= htmlspecialchars($user) ?></h3>
     </div>
 <?php if ($recipes != null):?>
 <div class="container">

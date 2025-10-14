@@ -37,14 +37,12 @@ $connected = $user != "Guest";
                         </span>";
                     } else {
                         echo "
-                         <span class='text-light'><strong>&#128100; $user</strong></span>
+                         <a href='index.php?action=profile' class='text-light text-decoration-none'><strong>&#128100; $user</strong></a>
                          <span class='nav-item'>
                                 <a class='nav-link text-bg-danger p-1 rounded-1' href='logout.php'>Log-out</a>
                         </span>";
-
                     }
                     ?>
-
                 </span>
             </div>
         </div>
