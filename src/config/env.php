@@ -7,21 +7,21 @@ if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] === 'zabbas.ct.ws') {
 
 // Définition des variables pour chaque environnement
 $config = [
-    'local' => [
-        'DB_HOST' => 'localhost',
-        'DB_USER' => 'zaher',
-        'DB_PASS' => '6666',
-        'DB_NAME' => 'recipe-app',
-        'MONGO_URI' => 'mongodb://localhost:27017',
-        'MONGO_DB' => 'recipe-app'
-    ],
+    'local' => array(
+        'DB_HOST' => '',
+        'DB_USER' => '',
+        'DB_PASS' => '',
+        'DB_NAME' => '',
+        'MONGO_URI' => '',
+        'MONGO_DB' => ''
+    ),
     'production' => [
-        'DB_HOST' => 'mysql-mzabbas.alwaysdata.net',
-        'DB_USER' => 'mzabbas',
-        'DB_PASS' => 'MyGoodfadi9@',
-        'DB_NAME' => 'mzabbas_recipe',
-        'MONGO_URI' => 'mongodb+srv://mzabbas:bHwjXZO8MG915ua7@mzabbas.sihqpe2.mongodb.net/?retryWrites=true&w=majority&appName=mzabbas',
-        'MONGO_DB' => 'recipe_app'
+        'DB_HOST' => '',
+        'DB_USER' => '',
+        'DB_PASS' => '',
+        'DB_NAME' => '',
+        'MONGO_URI' => '',
+        'MONGO_DB' => ''
     ]
 ];
 
