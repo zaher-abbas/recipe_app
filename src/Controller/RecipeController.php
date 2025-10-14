@@ -29,7 +29,7 @@ class RecipeController
 
                 $image_name = $rimage['name'];
                 $image_name = time() . $image_name;
-                $folderName = './../img/';
+                $folderName = './../View/img/';
                 if (!is_dir($folderName)) {
                     mkdir($folderName, 0775, true);
                 }
@@ -43,13 +43,13 @@ class RecipeController
             }
 
         }
-        require_once './../Vue/addrecipe.php';
+        require_once './../View/addrecipe.php';
     }
 
     public function showAllRecipes(): void
     {
         $recipes = $this->recipe->getRecipes();
-        require_once './../Vue/dashboard.php';
+        require_once './../View/dashboard.php';
     }
 
     public function showRecipeDetails(): void
@@ -67,7 +67,7 @@ class RecipeController
                     header('Location: index.php?action=recipe&id=' . $id);
                 }
             }
-            require_once './../Vue/recipe.php';
+            require_once './../View/recipe.php';
         }
     }
 }
