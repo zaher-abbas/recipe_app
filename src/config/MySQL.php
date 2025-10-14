@@ -2,7 +2,6 @@
 
 namespace App\config;
 
-require_once './../config/env.php';;
 
 use PDO;
 use PDOException;
