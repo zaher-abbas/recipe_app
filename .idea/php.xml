@@ -35,12 +35,12 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/mongodb/mongodb" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php85" />
-      <path value="$PROJECT_DIR$/vendor/mongodb/mongodb" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="697271a3-d700-478e-88e0-3a4341c4f081" timeout="60000" />
