@@ -4,17 +4,21 @@ namespace App\config;
 use MongoDB\Client;
 
 require './../../vendor/autoload.php';
-require_once './../config/env.php';
 
 final class MongoDB
 {
+
+    private const DB_NAME = 'recipe-app';
+
     private static function getClient(): Client
     {
-        return new Client(MONGO_URI);
+        $uri = getenv('MONGODB_URI') ?: "mongodb://localhost:27017";
+        return new Client($uri);
     }
-     public static function getConnection($dbName = MONGO_DB)
-     {
-            return self::getClient()->$dbName;
-        }
+    public static function getConnection($dbName = self::DB_NAME)
+    {
+        $db = getenv('MONGODB_DB') ?: $dbName;
+        return self::getClient()->$db;
+    }
 
 }
