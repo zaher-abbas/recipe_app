@@ -25,7 +25,7 @@ class User
     {
         $query = "INSERT INTO user (firstName, lastName, email, password) VALUES
                                    (:firstName, :lastName, :email, :password)";
-        if (!$this->findBy($email)) {
+        if (!$this->findUserByEmail($email)) {
             $statement = $this->db->prepare($query);
             $statement->bindValue(':firstName', $firstName);
             $statement->bindValue(':lastName', $lastName);
@@ -37,7 +37,7 @@ class User
             throw new UserAlreadyExists("This user already exist!");
     }
 
-    public function findBy(string $email): bool
+    public function findUserByEmail(string $email): bool
     {
         $query = "SELECT * FROM user WHERE email = :email";
         $statement = $this->db->prepare($query);
