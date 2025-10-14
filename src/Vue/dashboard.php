@@ -17,7 +17,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
       <img src="./../img/<?=$recipe['image']?>" class="card-img-top rounded-start w-100 fixed-img" alt="">
       <div class="card-body">
         <h5 class="card-title fw-bold"><?=htmlspecialchars($recipe['name']) ?></h5>
-        <p class="card-text">This recipe is submitted by <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?></p>
+        <p class="card-text">Submitted by <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?></p>
          <div class="text-center my-4">
          <a href="index.php?action=recipe&id=<?=$recipe['id']?>" class="btn btn-success w-50">Check this Recipe!</a>
          </div>
