@@ -38,7 +38,7 @@ class UserController
             header('Location: index.php?action=login');
             exit();
         }
-        require_once './../Vue/register.php';
+        require_once './../View/register.php';
     }
 
 
@@ -69,7 +69,7 @@ class UserController
                 exit();
             }
         }
-        require_once './../Vue/login.php';
+        require_once './../View/login.php';
     }
 
     public function profile(): void
@@ -88,6 +88,6 @@ class UserController
         {
             header('Location: index.php?action=login');
         }
-        require_once './../Vue/profile.php';
+        require_once './../View/profile.php';
     }
 }

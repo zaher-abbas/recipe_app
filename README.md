@@ -55,7 +55,7 @@ A modern web application for managing recipes, built with PHP and using both Mon
 5. Configure your web server:
     - Document root should point to the application’s web entry (the Views directory with index.php)
     - For quick local testing, you can use PHP’s built-in server:
-        - php -S localhost:8000 -t recipe_app/Vue
+        - php -S localhost:8000 -t src/View
         - Then open http://localhost:8000/index.php in your browser
 
 ## Usage
@@ -96,7 +96,7 @@ A modern web application for managing recipes, built with PHP and using both Mon
 - Install dependencies:
     - composer install
 - Start local server (example):
-    - php -S localhost:8000 -t src/Vue
+    - php -S localhost:8000 -t src/View
 
 ## License
 
