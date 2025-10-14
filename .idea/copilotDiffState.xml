@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/config/MySQL.php">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/config/MySQL.php" />
+              <option name="originalContent" value="&lt;?php&#10;&#10;namespace App\config;&#10;&#10;require './../config/env.php';;&#10;&#10;use PDO;&#10;use PDOException;&#10;&#10;final class MySQL&#10;{&#10;&#10;    public static function getConnection(): ?PDO&#10;    {&#10;        try {&#10;            // Utilisation des constantes définies dans env.php&#10;            $dsn = &quot;mysql:host=&quot; . DB_HOST . &quot;;dbname=&quot; . DB_NAME . &quot;;charset=utf8mb4&quot;;&#10;            $pdo = new PDO($dsn, DB_USER, DB_PASS, [&#10;                PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,&#10;                PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,&#10;            ]);&#10;            return $pdo;&#10;        } catch (PDOException $e) {&#10;            echo &quot;Erreur : &quot; . $e-&gt;getMessage();&#10;        }&#10;        return null;&#10;    }&#10;&#10;}" />
+              <option name="updatedContent" value="&lt;?php&#10;&#10;namespace App\config;&#10;&#10;require './../config/env.php';;&#10;&#10;use PDO;&#10;use PDOException;&#10;&#10;final class MySQL&#10;{&#10;&#10;    public static function getConnection(): ?PDO&#10;    {&#10;        try {&#10;            // Utilisation des constantes définies dans env.php&#10;            $dsn = &quot;mysql:host=&quot; . DB_HOST . &quot;;dbname=&quot; . DB_NAME . &quot;;charset=utf8mb4&quot;;&#10;            $pdo = new PDO($dsn, DB_USER, DB_PASS, [&#10;                PDO::ATTR_ERRMODE =&gt; PDO::ERRMODE_EXCEPTION,&#10;                PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,&#10;            ]);&#10;            return $pdo;&#10;        } catch (PDOException $e) {&#10;            echo &quot;Erreur : &quot; . $e-&gt;getMessage();&#10;        }&#10;        return null;&#10;    }&#10;&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/config/env.php">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/config/env.php" />
+              <option name="originalContent" value="&lt;?php&#10;// Détection automatique de l'environnement&#10;$env = 'local';&#10;if (isset($_SERVER['HTTP_HOST']) &amp;&amp; $_SERVER['HTTP_HOST'] === 'zabbas.ct.ws') {&#10;    $env = 'production';&#10;}&#10;&#10;// Définition des variables pour chaque environnement&#10;$config = [&#10;    'local' =&gt; [&#10;        'DB_HOST' =&gt; 'localhost',&#10;        'DB_USER' =&gt; 'zaher',&#10;        'DB_PASS' =&gt; '6666',&#10;        'DB_NAME' =&gt; 'recipe-app',&#10;        'MONGO_URI' =&gt; 'mongodb://localhost:27017',&#10;        'MONGO_DB' =&gt; 'recipe-app'&#10;    ],&#10;    'production' =&gt; [&#10;        'DB_HOST' =&gt; 'mysql-mzabbas.alwaysdata.net',&#10;        'DB_USER' =&gt; 'mzabbas',&#10;        'DB_PASS' =&gt; 'MyGoodfadi9@',&#10;        'DB_NAME' =&gt; 'mzabbas_recipe',&#10;        'MONGO_URI' =&gt; 'mongodb+srv://mzabbas:bHwjXZO8MG915ua7@mzabbas.sihqpe2.mongodb.net/?retryWrites=true&amp;w=majority&amp;appName=mzabbas',&#10;        'MONGO_DB' =&gt; 'recipe_app'&#10;    ]&#10;];&#10;&#10;define('DB_HOST', $config[$env]['DB_HOST']);&#10;define('DB_USER', $config[$env]['DB_USER']);&#10;define('DB_PASS', $config[$env]['DB_PASS']);&#10;define('DB_NAME', $config[$env]['DB_NAME']);&#10;define('MONGO_URI', $config[$env]['MONGO_URI']);&#10;define('MONGO_DB', $config[$env]['MONGO_DB']);&#10;&#10;" />
+              <option name="updatedContent" value="&lt;?php&#10;// Détection automatique de l'environnement&#10;$env = 'local';&#10;if (isset($_SERVER['HTTP_HOST']) &amp;&amp; $_SERVER['HTTP_HOST'] === 'zabbas.ct.ws') {&#10;    $env = 'production';&#10;}&#10;&#10;// Définition des variables pour chaque environnement&#10;$config = [&#10;    'local' =&gt; [&#10;        'DB_HOST' =&gt; 'localhost',&#10;        'DB_USER' =&gt; 'zaher',&#10;        'DB_PASS' =&gt; '6666',&#10;        'DB_NAME' =&gt; 'recipe-app',&#10;        'MONGO_URI' =&gt; 'mongodb://localhost:27017',&#10;        'MONGO_DB' =&gt; 'recipe-app'&#10;    ],&#10;    'production' =&gt; [&#10;        'DB_HOST' =&gt; 'mysql-mzabbas.alwaysdata.net',&#10;        'DB_USER' =&gt; 'mzabbas',&#10;        'DB_PASS' =&gt; 'MyGoodfadi9@',&#10;        'DB_NAME' =&gt; 'mzabbas_recipe',&#10;        'MONGO_URI' =&gt; 'mongodb+srv://mzabbas:bHwjXZO8MG915ua7@mzabbas.sihqpe2.mongodb.net/?retryWrites=true&amp;w=majority&amp;appName=mzabbas',&#10;        'MONGO_DB' =&gt; 'recipe_app'&#10;    ]&#10;];&#10;&#10;if (!defined('DB_HOST')) define('DB_HOST', $config[$env]['DB_HOST']);&#10;if (!defined('DB_USER')) define('DB_USER', $config[$env]['DB_USER']);&#10;if (!defined('DB_PASS')) define('DB_PASS', $config[$env]['DB_PASS']);&#10;if (!defined('DB_NAME')) define('DB_NAME', $config[$env]['DB_NAME']);&#10;if (!defined('MONGO_URI')) define('MONGO_URI', $config[$env]['MONGO_URI']);&#10;if (!defined('MONGO_DB')) define('MONGO_DB', $config[$env]['MONGO_DB']);" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -2,7 +2,8 @@
     "name": "administrateur/recipe_app",
     "type": "project",
     "require": {
-        "mongodb/mongodb": ">=2.1.1"
+        "mongodb/mongodb": ">=2.1.1",
+      "ext-pdo": "*"
     },
     "authors": [
         {
