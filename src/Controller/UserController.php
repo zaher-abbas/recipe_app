@@ -23,24 +23,59 @@ class UserController
 
     public function register(): void
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $firstname = trim($_POST['firstname']);
-            $lastname = trim($_POST['lastname']);
-            $email = trim($_POST['email']);
-            $password_crypted = password_hash(trim($_POST['password']), PASSWORD_BCRYPT);
-            try {
-                $this->user->createUser($firstname, $lastname, $password_crypted, $email);
+        unset($_COOKIE['UserAlreadyExists']);
+        unset($_COOKIE['ErrorEmptyFields']);
+        unset($_COOKIE['ErrorPwdNotMatch']);
+        unset($_COOKIE['firstname']);
+        unset($_COOKIE['lastname']);
+        unset($_COOKIE['email']);
 
-            } catch (UserAlreadyExists $e) {
-                setcookie("UserAlreadyExists", $e->getMessage());
-                $_COOKIE["UserAlreadyExists"] = $e->getMessage();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $errors = [];
+            $firstname = isset($_POST['firstname']) ? trim($_POST['firstname']) : '';
+            $lastname = isset($_POST['lastname']) ? trim($_POST['lastname']) : '';
+            $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+            $password = isset($_POST['password']) ? trim($_POST['password']) : '';
+            $pwdConfirm = isset($_POST['pwdConfirm']) ? trim($_POST['pwdConfirm']) : '';
+
+            if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($pwdConfirm)) {
+                $errors["empty"] = "Please fill all the fields before submitting!";
             }
-            header('Location: index.php?action=login');
-            exit();
+            if ($password != $pwdConfirm) {
+                $errors["pwd"] = "Passwords do not match!";
+            }
+            if (empty($errors)) {
+                $password_crypted = password_hash($password, PASSWORD_BCRYPT);
+
+                try {
+                    $this->user->createUser($firstname, $lastname, $password_crypted, $email);
+
+                } catch (UserAlreadyExists $e) {
+                    $errors["UserAlreadyExists"] = $e->getMessage();
+                    setcookie("UserAlreadyExists", $e->getMessage());
+                    $_COOKIE["UserAlreadyExists"] = $e->getMessage();
+                    $this->persistUserInfo($firstname, $lastname, $email);
+                }
+            } else {
+                if (isset($errors["empty"])) {
+                    setcookie("ErrorEmptyFields", $errors["empty"]);
+                    $_COOKIE["ErrorEmptyFields"] = $errors["empty"];
+                } else
+                    unset($_COOKIE['ErrorEmptyFields']);
+                if (isset($errors["pwd"])) {
+                    setcookie("ErrorPwdNotMatch", $errors["pwd"]);
+                    $_COOKIE["ErrorPwdNotMatch"] = $errors["pwd"];
+                } else
+                    unset($_COOKIE['ErrorPwdNotMatch']);
+                $this->persistUserInfo($firstname, $lastname, $email);
+            }
+            if (empty($errors)) {
+                header('Location: index.php?action=login');
+                exit();
+            }
         }
         require_once './../View/register.php';
     }
-
 
     public function login(): void
     {
@@ -89,5 +124,21 @@ class UserController
             header('Location: index.php?action=login');
         }
         require_once './../View/profile.php';
+    }
+
+    public function persistUserInfo(string $firstname, string $lastname, string $email): void
+    {
+        if (!empty($firstname)) {
+            setcookie("firstname", $firstname);
+            $_COOKIE["firstname"] = $firstname;
+        }
+        if (!empty($lastname)) {
+            setcookie("lastname", $lastname);;
+            $_COOKIE["lastname"] = $lastname;
+        }
+        if (!empty($email)) {
+            setcookie("email", $email);
+            $_COOKIE["email"] = $email;
+        }
     }
 }

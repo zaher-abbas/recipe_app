@@ -1,6 +1,6 @@
 <section class="container my-4">
     <h1 class="text-center alert alert-light">Log-in to your account</h1>
-    <form class="auth-form" action="" method="post" class="p-3 rounded">
+    <form class="auth-form p-4" action="" method="post" class="p-3 rounded">
         <div class="mb-4">
             <label for="email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required

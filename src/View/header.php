@@ -29,7 +29,7 @@ $connected = $user != "Guest";
                 <span class="d-flex align-items-center justify-content-evenly gap-4">
                     <?php
                     if (!$connected) {
-                        echo " <span class='nav-item'>
+                        echo "<span class='nav-item'>
                                 <a class='nav-link text-light' href='index.php?action=register'>Register</a>
                         </span>
                         <span class='nav-item'>
