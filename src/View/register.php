@@ -1,6 +1,6 @@
 <section class="container my-4 text-white">
     <h1 class="text-center alert alert-light">Register A New Account</h1>
-    <form action="" method="post" class="p-3 rounded">
+    <form class="auth-form" action="" method="post" class="p-3 rounded">
         <div class="mb-4">
             <label for="firstname" class="form-label">First Name <span class="text-danger">*</span>
             </label>

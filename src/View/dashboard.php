@@ -6,11 +6,20 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 ?>
 <?php if ($user != ""): ?>
     <div class='container my-4'>
-        <h1 class="text-center mb-4 display-4 fw-bold">Dashboard - &#127860; MyRecipe</h1>
-         <form class="d-flex" role="search" method="get" action="index.php">
+        <h1 class="text-center mb-5 display-4 fw-bold">Discover Recipes - &#127860;</h1>
+         <form class="d-flex  justify-content-center" role="search" method="get" action="index.php">
          <input type="hidden" name="action" value="search"/>
-        <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <div class="input-group input-group-sm" style="max-width: 400px;">
+                <span class="input-group-text">🔍</span>
+                <input
+                    class="form-control"
+                    name="query"
+                    type="search"
+                    placeholder="Search recipes..."
+                    aria-label="Search recipes"
+                />
+                <button class="btn btn-success" type="submit" title="Search">Go</button>
+            </div>
       </form>
     </div>
 <?php if ($recipes):?>
