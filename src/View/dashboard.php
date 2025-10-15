@@ -7,8 +7,13 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <?php if ($user != ""): ?>
     <div class='container my-4'>
         <h1 class="text-center mb-4 display-4 fw-bold">Dashboard - &#127860; MyRecipe</h1>
+         <form class="d-flex" role="search" method="get" action="index.php">
+         <input type="hidden" name="action" value="search"/>
+        <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-<?php if ($recipes != null):?>
+<?php if ($recipes):?>
 <div class="container">
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 p-4">
 <?php foreach ($recipes as $recipe): ?>
@@ -27,9 +32,15 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
       </div>
     </div>
   </div>
-<?php endforeach; ?>
+  <?php endforeach; ?>
 <?php endif; ?>
+<?php if ($recipes == null): ?>
+<div class="container">
+    <div class="alert alert-info text-center" role="alert">
+        No recipes found. Be the first to add a recipe!
+    </div>
 </div>
+<?php endif; ?>
 <?php else: ?>
     <!--
     <div class='container my-4 text-center'>

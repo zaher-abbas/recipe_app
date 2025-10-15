@@ -32,6 +32,9 @@ switch ($action) {
     case 'recipe':
         $recipeController->showRecipeDetails();
         break;
+    case 'search':
+        $recipeController->searchRecipeByName();
+        break;
     default:
         require_once 'dashboard.php';
         break;

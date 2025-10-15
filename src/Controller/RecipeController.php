@@ -70,4 +70,14 @@ class RecipeController
             require_once './../View/recipe.php';
         }
     }
+
+    public function searchRecipeByName(): void
+    {
+        $query = isset($_GET['query']) ? trim($_GET['query']) : null;
+        $recipes = [];
+        if ($query) {
+            $recipes = $this->recipe->searchRecipeByName($query);
+        }
+        require_once './../View/dashboard.php';
+    }
 }

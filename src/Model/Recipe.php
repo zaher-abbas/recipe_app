@@ -41,4 +41,13 @@ class Recipe
         $statement->execute();
         return $statement->fetch() ?? null;
     }
+
+    public function searchRecipeByName(string $query): array|null
+    {
+        $sql = "SELECT recipe.*, firstname, lastname FROM recipe JOIN user u ON u.id = recipe.user_id WHERE recipe.name LIKE :query";
+        $statement = $this->db->prepare($sql);
+        $statement->bindValue(':query', '%' . $query . '%');
+        $statement->execute();
+        return $statement->fetchAll() ?? null;
+    }
 }
