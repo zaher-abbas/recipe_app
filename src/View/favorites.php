@@ -35,7 +35,7 @@
                 <div class="alert alert-info text-center fs-5" role="alert">
                     You have no favorite recipes yet!
                     <br><br>
-                    <a href="index.php?action=recipes" class="btn btn-success">Check our recipes</a>
+                    <a href="index.php?action=home" class="btn btn-success">Check our recipes</a>
                 </div>
             </div>
         <?php endif; ?>

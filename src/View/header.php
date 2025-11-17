@@ -18,13 +18,13 @@ $connected = $user != "Guest";
                 if ($connected) {
                     echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
                         <li class='nav-item me-2'>
-                            <a class='nav-link text-light' aria-current='page' href='index.php?action=home'>Home</a>
+                            <a class='nav-link text-light p-3' aria-current='page' href='index.php?action=home'>Home</a>
                         </li>
                         <li class='nav-item'>
-                            <a class='nav-link text-light' href='index.php?action=addrecipe'>Add Recipe</a>
+                            <a class='nav-link text-light text-bg-primary rounded-2 p-3' href='index.php?action=addrecipe'>Add Recipe ➕</a>
                         </li>
-                        <li class='nav-item ms-2'>
-                        <a class='nav-link text-dark text-bg-warning rounded-2' href='index.php?action=favorites'>My Favorites &#11088;</a>
+                        <li class='nav-item ms-lg-3 mt-md-2 mt-sm-2 mt-lg-0'>
+                        <a class='nav-link text-dark text-bg-warning rounded-2 p-3' href='index.php?action=favorites'>My Favorites &#11088;</a>
                         </li>
                     </ul>";
                 }
@@ -40,9 +40,9 @@ $connected = $user != "Guest";
                         </span>";
                     } else {
                         echo "
-                         <a href='index.php?action=profile' class='text-light text-bg-primary p-2 rounded-2 text-decoration-none'><strong>&#128100; $user</strong></a>
+                         <a href='index.php?action=profile' class='text-dark text-bg-info p-3 rounded-2 text-decoration-none'><strong>&#128100; $user</strong></a>
                          <span class='nav-item'>
-                                <a class='nav-link text-bg-danger p-2 rounded-2' href='logout.php'>Log-out</a>
+                                <a class='nav-link text-bg-danger p-3 rounded-2' href='logout.php'>Log-out ↪</a>
                         </span>";
                     }
                     ?>
