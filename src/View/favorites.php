@@ -7,8 +7,8 @@
         <h1 class="text-center mb-5 display-4 fw-bold">&#11088;	My Favorite Recipes &#11088;</h1>
     </div>
 <?php if ($favoriteRecipes):?>
-<div class="container">
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 p-4">
+<div class="container page-favorites">
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 p-4 justify-content-center">
 <?php foreach ($favoriteRecipes as $recipe): ?>
   <div class="col">
     <div class="card recipe-card bg-sage-light text-forest border border-secondary-subtle border-start-0 rounded-end border-4 mb-3 p-4">

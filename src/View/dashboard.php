@@ -24,7 +24,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
     </div>
 <?php if ($recipes):?>
 <div class="container">
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 p-4">
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 p-4 justify-content-center">
 <?php foreach ($recipes as $recipe): ?>
   <div class="col">
     <div class="card recipe-card bg-sage-light text-forest border border-secondary-subtle border-start-0 rounded-end border-4 mb-3 p-4">
@@ -33,7 +33,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
         <h5 class="card-title fw-bold"><?=htmlspecialchars($recipe['name']) ?></h5>
         <p class="card-text">Submitted by <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?></p>
          <div class="text-center my-4">
-         <a href="index.php?action=recipe&id=<?=$recipe['id']?>" class="btn btn-success w-50">Check this Recipe!</a>
+         <a href="index.php?action=recipe&id=<?=$recipe['id']?>" class="btn btn-success w-50">Check this Recipe</a>
          </div>
       </div>
        <div class="card-footer">

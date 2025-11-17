@@ -46,5 +46,17 @@ input {
 
 }
 
+.page-favorites .recipe-card {
+    background: #fff7e6;            /* léger orange pâle */
+    border-color: #ffc107 !important;/* rappel jaune */
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.25);
+}
+
+.page-favorites .recipe-card .btn {
+    background-color: #ffb300;
+    border-color: #ffb300;
+}
+
+
 
 
