@@ -1,6 +1,7 @@
 <?php
 /** @var array|null $recipe */
 /** @var array|null $comments */
+/** @var boolean $isRecipeFavorite */
 
 ?>
 
@@ -13,6 +14,17 @@
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="card-body">
+                        <div class="d-flex justify-content-end">
+                            <?php if (!$isRecipeFavorite): ?>
+                            <a href="index.php?action=addtofavorites&id=<?=$recipe['id']?>" class="btn btn-warning btn-sm mt-2">
+                            ★ Add to Favorites
+                        </a>
+                            <?php else: ?>
+                         <a href="index.php?action=removefromfavorites&id=<?=$recipe['id']?>" class="btn btn-danger btn-sm mt-2">
+                           ★ Remove from Favorites
+                        </a>
+                        <?php endif; ?>
+                        </div>
                         <h3 class="card-title"><?= htmlspecialchars($recipe['name']) ?></h3>
                         <h6 class="card-title mb-4"><?= 'Submitted by: ' . htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) . ' on ' . $recipe['created_at'] ?></h6>
                         <p class="card-text"><?= htmlspecialchars($recipe['description'])?></p>
@@ -69,3 +81,23 @@
         <?php endforeach; ?>
     <?php endif; ?>
 </section>
+<!-- Toastify CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<!-- Toastify JS -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<?php if (!empty($_SESSION['toast'])): ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Toastify({
+                text: "<?php echo htmlspecialchars($_SESSION['toast']['message'] ?? ''); ?>",
+                duration: 3000,
+                gravity: "top",      // "top" ou "bottom"
+                position: "right",   // "left", "center" ou "right"
+                backgroundColor: "<?php echo ($_SESSION['toast']['type'] ?? 'info') === 'success' ? '#16a34a' : '#2563eb'; ?>",
+                close: true
+            }).showToast();
+        });
+    </script>
+    <?php unset($_SESSION['toast']); endif; ?>
+

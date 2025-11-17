@@ -55,7 +55,9 @@ class RecipeController
     public function showRecipeDetails(): void
     {
         $id = $_GET['id'] ?? null;
+        $isRecipeFavorite = false;
         if ($id) {
+           $isRecipeFavorite = $this->recipe->isRecipeInFavorites($id, $_SESSION['userId']);
             $this->comment = new Comment();
             $recipe = $this->recipe->getRecipeById($id);
             $comments = $this->comment->getCommentsByRecipeId($id);
@@ -80,4 +82,32 @@ class RecipeController
         }
         require_once './../View/dashboard.php';
     }
+
+    public function addtoFavorites(): void
+    {
+        $id = $_GET['id'] ?? null;
+        if ($id) {
+            $this->recipe->addRecipeToFavorites($id, $_SESSION['userId']);
+            $_SESSION['toast'] = [
+                'type' => 'success',
+                'message' => 'Recette ajoutée aux favoris.'
+            ];
+            header('Location: index.php?action=recipe&id=' . $id);
+        }
+    }
+
+    public function removeFromFavorites(): void
+    {
+        $id = $_GET['id'] ?? null;
+        if ($id) {
+            $this->recipe->removeRecipeFromFavorites($id, $_SESSION['userId']);
+            $_SESSION['toast'] = [
+                'type' => 'success',
+                'message' => 'Recette retirée des favoris.'
+            ];
+            header('Location: index.php?action=recipe&id=' . $id);
+        }
+    }
 }
+
+

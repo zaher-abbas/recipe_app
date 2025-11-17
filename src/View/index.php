@@ -35,6 +35,12 @@ switch ($action) {
     case 'search':
         $recipeController->searchRecipeByName();
         break;
+    case 'addtofavorites':
+        $recipeController->addtoFavorites();
+        break;
+    case 'removefromfavorites':
+        $recipeController->removeFromFavorites();
+        break;
     default:
         require_once 'dashboard.php';
         break;

@@ -13,7 +13,6 @@ class Recipe
         $this->db = $db;
     }
 
-    //Operation CRUD Create:
     public function createRecipe(int $userId, string $name, string $image, string $description): void
     {
         $query = "INSERT INTO recipe (user_id, name, image, description) VALUES
@@ -28,9 +27,9 @@ class Recipe
 
     public function getRecipes(): array|null
     {
-     $query = "SELECT recipe.*, firstname, lastname FROM recipe JOIN user u ON u.id = recipe.user_id";
-     $statement = $this->db->query($query);
-     return $statement->fetchAll() ?? null;
+        $query = "SELECT recipe.*, firstname, lastname FROM recipe JOIN user u ON u.id = recipe.user_id";
+        $statement = $this->db->query($query);
+        return $statement->fetchAll() ?? null;
     }
 
     public function getRecipeById(int $id): array|null
@@ -47,6 +46,42 @@ class Recipe
         $sql = "SELECT recipe.*, firstname, lastname FROM recipe JOIN user u ON u.id = recipe.user_id WHERE recipe.name LIKE :query";
         $statement = $this->db->prepare($sql);
         $statement->bindValue(':query', '%' . $query . '%');
+        $statement->execute();
+        return $statement->fetchAll() ?? null;
+    }
+
+    public function addRecipeToFavorites(int $recipeId, int $userId): void
+    {
+        $query = "INSERT INTO favorite (recipe_id, user_id) VALUES (:recipe_id, :user_id)";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':recipe_id', $recipeId);
+        $statement->bindValue(':user_id', $userId);
+        $statement->execute();
+    }
+
+    public function removeRecipeFromFavorites(int $recipeId, int $userId): void
+    {
+        $query = "DELETE FROM favorite WHERE recipe_id = :recipe_id AND user_id = :user_id";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':recipe_id', $recipeId);
+        $statement->bindValue(':user_id', $userId);
+        $statement->execute();
+    }
+
+    public function isRecipeInFavorites(int $recipeId, int $userId): bool
+    {
+        $query = "SELECT COUNT(*) FROM favorite WHERE recipe_id = :recipe_id AND user_id = :user_id";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':recipe_id', $recipeId);
+        $statement->bindValue(':user_id', $userId);
+        $statement->execute();
+        return $statement->fetchColumn() > 0;
+    }
+    public function getFavoritesByUserId(int $userId): array|null
+    {
+        $query = "SELECT recipe.*, firstname, lastname FROM recipe JOIN favorite ON recipe.id = favorite.recipe_id JOIN user ON user.id = favorite.user_id WHERE favorite.user_id = :user_id";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':user_id', $userId);
         $statement->execute();
         return $statement->fetchAll() ?? null;
     }
