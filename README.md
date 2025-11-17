@@ -1,8 +1,9 @@
-# Recipe App
+## 🍴 Recipe App
 
-A modern web application for managing recipes, built with PHP and using both MongoDB and MySQL. It allows users to create, manage, and share their culinary recipes.
+A modern web application for managing recipes, built with PHP and using both MongoDB and MySQL. It allows users to
+create, manage, and share their culinary recipes.
 
-## Features
+## ✨Features
 
 - User registration and authentication
 - Create, edit, and delete recipes
@@ -10,10 +11,11 @@ A modern web application for managing recipes, built with PHP and using both Mon
 - Comment on recipes and view discussions
 - Personal dashboard and profile management
 - Search and browse recipes
+- Add recipes to your favorites.
 - Uses MySQL (PDO) and MongoDB drivers
 - Simple, modular MVC-like structure (Controllers, Models, Views)
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - PHP 8.1+ (recommended 8.3)
 - Composer (dependency management)
@@ -21,7 +23,7 @@ A modern web application for managing recipes, built with PHP and using both Mon
 - MongoDB (via mongodb/mongodb PHP library)
 - Bootstrap (front-end styling and components)
 
-## Prerequisites
+## 📋 Prerequisites
 
 - PHP 8.1+ with the following extensions:
     - ext-pdo (for MySQL)
@@ -31,10 +33,10 @@ A modern web application for managing recipes, built with PHP and using both Mon
 - A running MongoDB instance and credentials
 - A web server (Apache/Nginx) or PHP’s built-in server
 
-## Installation
+## 📦 Installation
 
 1. Clone the repository:
-    - git clone https://your-repo-url/recipe_app.git
+    - git clone https://repo-url/recipe_app.git
     - cd recipe_app
 
 2. Install PHP dependencies:
@@ -58,7 +60,7 @@ A modern web application for managing recipes, built with PHP and using both Mon
         - php -S localhost:8000 -t src/View
         - Then open http://localhost:8000/index.php in your browser
 
-## Usage
+## 🚀 Usage
 
 - Register a new account or log in
 - Create new recipes from your dashboard
@@ -66,20 +68,20 @@ A modern web application for managing recipes, built with PHP and using both Mon
 - Browse recipes and leave comments
 - Manage your profile information
 
-## Environment & Configuration
+## ⚙️ Environment & Configuration
 
 - Ensure your PHP environment has both MySQL (PDO) and MongoDB extensions enabled
 - Set proper file permissions for any folders that handle uploads (e.g., images)
 - Adjust base URLs or paths in configuration or view templates if you deploy under a subdirectory
 
-## Development Tips
+## 💡 Development Tips
 
 - Follow PSR standards where applicable
 - Keep controller logic thin and move data logic to models
 - Reuse shared UI components for headers/navbars to ensure consistency
 - If you add tests with PHPUnit, place them under a tests directory and configure phpunit.xml accordingly
 
-## Troubleshooting
+## 🧯 Troubleshooting
 
 - 500 or blank page:
     - Enable error reporting in your PHP environment during development
