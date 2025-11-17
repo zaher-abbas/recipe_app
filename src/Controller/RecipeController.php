@@ -36,6 +36,10 @@ class RecipeController
 
                 move_uploaded_file($rimage['tmp_name'], $folderName . $image_name);
                 $this->recipe->createRecipe($_SESSION['userId'], $rname, $image_name, $rdescription);
+                $_SESSION['toast'] = [
+                    'type' => 'success',
+                    'message' => 'Recipe added successfully.'
+                ];
                 header('Location: index.php?action=home');
             } else {
                 setcookie("ErrorAddingRecipe", "Error; Please fill all the fields before submitting!");
@@ -57,7 +61,7 @@ class RecipeController
         $id = $_GET['id'] ?? null;
         $isRecipeFavorite = false;
         if ($id) {
-           $isRecipeFavorite = $this->recipe->isRecipeInFavorites($id, $_SESSION['userId']);
+            $isRecipeFavorite = $this->recipe->isRecipeInFavorites($id, $_SESSION['userId']);
             $this->comment = new Comment();
             $recipe = $this->recipe->getRecipeById($id);
             $comments = $this->comment->getCommentsByRecipeId($id);
