@@ -1,7 +1,8 @@
 ## 🍴 Recipe App
 
-A modern web application for managing recipes, built with PHP and using both MongoDB and MySQL. It allows users to
-create, manage, and share their culinary recipes.
+A modern web application for managing recipes, built with native PHP using an MVC structure and both MongoDB and MySQL
+for data persistence.
+It allows users to create, manage, and share their culinary recipes.
 
 ## ✨Features
 
