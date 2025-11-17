@@ -23,6 +23,9 @@ $connected = $user != "Guest";
                         <li class='nav-item'>
                             <a class='nav-link text-light' href='index.php?action=addrecipe'>Add Recipe</a>
                         </li>
+                        <li class='nav-item'>
+                        <a class='nav-link text-light' href='index.php?action=favorites'>My Favorites &#11088;</a>
+                        </li>
                     </ul>";
                 }
                 ?>

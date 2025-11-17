@@ -41,6 +41,9 @@ switch ($action) {
     case 'removefromfavorites':
         $recipeController->removeFromFavorites();
         break;
+    case 'favorites':
+        $recipeController->showFavorites();
+        break;
     default:
         require_once 'dashboard.php';
         break;

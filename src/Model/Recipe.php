@@ -79,7 +79,7 @@ class Recipe
     }
     public function getFavoritesByUserId(int $userId): array|null
     {
-        $query = "SELECT recipe.*, firstname, lastname FROM recipe JOIN favorite ON recipe.id = favorite.recipe_id JOIN user ON user.id = favorite.user_id WHERE favorite.user_id = :user_id";
+        $query = "SELECT r.*, u.firstname, u.lastname FROM recipe r JOIN favorite f ON f.recipe_id = r.id JOIN `user` u ON u.id = r.user_id WHERE f.user_id = :user_id;";
         $statement = $this->db->prepare($query);
         $statement->bindValue(':user_id', $userId);
         $statement->execute();

@@ -108,6 +108,12 @@ class RecipeController
             header('Location: index.php?action=recipe&id=' . $id);
         }
     }
+
+    public function showFavorites(): void
+    {
+        $favoriteRecipes = $this->recipe->getFavoritesByUserId($_SESSION['userId']);
+        require_once './../View/favorites.php';
+    }
 }
 
 
