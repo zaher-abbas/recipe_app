@@ -4,18 +4,21 @@
         <div class="mb-4">
             <label for="firstname" class="form-label">First Name <span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="firstname" name="firstname" required maxlength="20" value="<?php echo !isset($_COOKIE['firstname']) ? '' : $_COOKIE['firstname'];?>">
+            <input type="text" class="form-control" id="firstname" name="firstname" required maxlength="20"
+                   value="<?php echo !isset($_COOKIE['firstname']) ? '' : $_COOKIE['firstname']; ?>">
         </div>
         <div class="mb-4">
             <label for="lastname" class="form-label">Last Name <span class="text-danger">*</span>
             </label>
-            <input type="text" class="form-control" id="lastname" name="lastname" required maxlength="50" value="<?php echo !isset($_COOKIE['lastname']) ? '' : $_COOKIE['lastname'];?>">
+            <input type="text" class="form-control" id="lastname" name="lastname" required maxlength="50"
+                   value="<?php echo !isset($_COOKIE['lastname']) ? '' : $_COOKIE['lastname']; ?>">
         </div>
         <div class="mb-4">
             <label for="email" class="form-label">Email address <span class="text-danger">*</span>
             </label>
             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required
-                   maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo !isset($_COOKIE['email']) ? '' : $_COOKIE['email'];?>">
+                   maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                   value="<?php echo !isset($_COOKIE['email']) ? '' : $_COOKIE['email']; ?>">
         </div>
         <div class="mb-4">
             <label for="password" class="form-label">Password <span class="text-danger">*</span>

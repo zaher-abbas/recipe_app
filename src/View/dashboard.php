@@ -45,8 +45,10 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <?php endif; ?>
 <?php if ($recipes == null): ?>
 <div class="container">
-    <div class="alert alert-info text-center" role="alert">
+    <div class="alert alert-info text-center fs-5" role="alert">
         No recipes found. Be the first to add a recipe!
+        <br><br>
+        <a href="index.php?action=addrecipe" class="btn btn-success">Add a Recipe</a>
     </div>
 </div>
 <?php endif; ?>

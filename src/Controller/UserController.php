@@ -70,6 +70,10 @@ class UserController
                 $this->persistUserInfo($firstname, $lastname, $email);
             }
             if (empty($errors)) {
+                $_SESSION['toast'] = [
+                    'type' => 'success',
+                    'message' => 'User registered successfully. Please login.'
+                ];
                 header('Location: index.php?action=login');
                 exit();
             }

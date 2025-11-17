@@ -16,18 +16,20 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-end">
                             <?php if (!$isRecipeFavorite): ?>
-                            <a href="index.php?action=addtofavorites&id=<?=$recipe['id']?>" class="btn btn-warning btn-sm mt-2">
-                            ★ Add to Favorites
-                        </a>
+                                <a href="index.php?action=addtofavorites&id=<?= $recipe['id'] ?>"
+                                   class="btn btn-warning btn-sm mt-2">
+                                    ★ Add to Favorites
+                                </a>
                             <?php else: ?>
-                         <a href="index.php?action=removefromfavorites&id=<?=$recipe['id']?>" class="btn btn-danger btn-sm mt-2">
-                           ★ Remove from Favorites
-                        </a>
-                        <?php endif; ?>
+                                <a href="index.php?action=removefromfavorites&id=<?= $recipe['id'] ?>"
+                                   class="btn btn-danger btn-sm mt-2">
+                                    ★ Remove from Favorites
+                                </a>
+                            <?php endif; ?>
                         </div>
                         <h3 class="card-title"><?= htmlspecialchars($recipe['name']) ?></h3>
                         <h6 class="card-title mb-4"><?= 'Submitted by: ' . htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) . ' on ' . $recipe['created_at'] ?></h6>
-                        <p class="card-text"><?= htmlspecialchars($recipe['description'])?></p>
+                        <p class="card-text"><?= htmlspecialchars($recipe['description']) ?></p>
                     </div>
                 </div>
             </div>
@@ -81,10 +83,6 @@
         <?php endforeach; ?>
     <?php endif; ?>
 </section>
-<!-- Toastify CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<!-- Toastify JS -->
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <?php if (!empty($_SESSION['toast'])): ?>
     <script>

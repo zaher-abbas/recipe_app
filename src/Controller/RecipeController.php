@@ -90,7 +90,7 @@ class RecipeController
             $this->recipe->addRecipeToFavorites($id, $_SESSION['userId']);
             $_SESSION['toast'] = [
                 'type' => 'success',
-                'message' => 'Recette ajoutée aux favoris.'
+                'message' => 'Recipe added to favorites successfully.'
             ];
             header('Location: index.php?action=recipe&id=' . $id);
         }
@@ -103,7 +103,7 @@ class RecipeController
             $this->recipe->removeRecipeFromFavorites($id, $_SESSION['userId']);
             $_SESSION['toast'] = [
                 'type' => 'success',
-                'message' => 'Recette retirée des favoris.'
+                'message' => 'Recipe removed from favorites successfully.'
             ];
             header('Location: index.php?action=recipe&id=' . $id);
         }
