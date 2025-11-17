@@ -23,8 +23,8 @@ $connected = $user != "Guest";
                         <li class='nav-item'>
                             <a class='nav-link text-light' href='index.php?action=addrecipe'>Add Recipe</a>
                         </li>
-                        <li class='nav-item'>
-                        <a class='nav-link text-light' href='index.php?action=favorites'>My Favorites &#11088;</a>
+                        <li class='nav-item ms-2'>
+                        <a class='nav-link text-dark text-bg-warning rounded-2' href='index.php?action=favorites'>My Favorites &#11088;</a>
                         </li>
                     </ul>";
                 }
@@ -40,9 +40,9 @@ $connected = $user != "Guest";
                         </span>";
                     } else {
                         echo "
-                         <a href='index.php?action=profile' class='text-light text-decoration-none'><strong>&#128100; $user</strong></a>
+                         <a href='index.php?action=profile' class='text-light text-bg-primary p-2 rounded-2 text-decoration-none'><strong>&#128100; $user</strong></a>
                          <span class='nav-item'>
-                                <a class='nav-link text-bg-danger p-1 rounded-1' href='logout.php'>Log-out</a>
+                                <a class='nav-link text-bg-danger p-2 rounded-2' href='logout.php'>Log-out</a>
                         </span>";
                     }
                     ?>
