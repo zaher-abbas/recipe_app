@@ -1,4 +1,4 @@
-<main>
+<main class="flex-grow-1">
     <section class="container my-4 text-white">
         <h1 class="text-center alert alert-light">Register A New Account</h1>
         <form class="auth-form p-5" action="" method="post" class="p-3 rounded">

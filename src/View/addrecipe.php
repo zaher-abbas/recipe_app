@@ -1,7 +1,7 @@
 <?php
 unset($_COOKIE['ErrorAddingRecipe']);
 ?>
-<main>
+<main class="flex-grow-1">
     <section class="container my-4">
         <h1 class="text-center alert alert-light">Add A New Recipe</h1>
         <form method="post" action="" enctype="multipart/form-data" class="p-3 rounded">

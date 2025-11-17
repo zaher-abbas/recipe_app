@@ -23,7 +23,7 @@ $action = $_GET['action'] ?? 'home';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>MyRecipe - App</title>
 </head>
-<body class="bg-dark-subtle">
+<body class="bg-dark-subtle d-flex flex-column min-vh-100">
 </body>
 </html>
 

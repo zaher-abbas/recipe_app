@@ -4,7 +4,7 @@
 
 $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 ?>
-<main>
+<main class="flex-grow-1">
     <?php if ($user != ""): ?>
     <section class='container my-4'>
         <h1 class="text-center mb-5 display-4 fw-bold">Discover Recipes - &#127860;</h1>

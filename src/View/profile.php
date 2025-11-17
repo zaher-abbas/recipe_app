@@ -3,7 +3,7 @@
 /** @var array|null $user */
 
 ?>
-<main>
+<main class="flex-grow-1">
     <section class="container my-3">
         <div class="card">
             <div class="card-header text-primary fw-bolder fs-2">Profile Info</div>

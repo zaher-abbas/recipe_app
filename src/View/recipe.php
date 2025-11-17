@@ -4,7 +4,7 @@
 /** @var boolean $isRecipeFavorite */
 
 ?>
-<main>
+<main class="flex-grow-1">
     <section class="container">
         <?php if ($recipe !== null): ?>
             <div class="card my-4 recipe-details p-3">

@@ -1,4 +1,4 @@
-<main>
+<main class="flex-grow-1">
     <section class="container my-4">
         <h1 class="text-center alert alert-light">Log-in to your account</h1>
         <form class="auth-form p-4" action="" method="post" class="p-3 rounded">

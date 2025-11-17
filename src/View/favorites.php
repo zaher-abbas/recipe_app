@@ -3,7 +3,7 @@
 /** @var array|null $favoriteRecipes */
 
 ?>
-<main>
+<main class="flex-grow-1">
     <section class='container my-4'>
         <h1 class="text-center mb-5 display-6 fw-bold">&#11088; My Favorite Recipes &#11088;</h1>
         <?php if ($favoriteRecipes): ?>
