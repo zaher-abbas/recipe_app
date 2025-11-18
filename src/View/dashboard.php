@@ -7,7 +7,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <main class="flex-grow-1">
     <?php if ($user != ""): ?>
     <section class='container my-4'>
-        <h1 class="text-center mb-5 display-4 fw-bold">Discover Our Recipes - &#127860; &#129379;</h1>
+        <h1 class="text-center my-5 display-4 fw-bold">Discover Our Recipes - &#127860; &#129379;</h1>
         <form class="d-flex justify-content-center" role="search" method="get" action="index.php">
             <input type="hidden" name="action" value="search"/>
             <div class="input-group input-group-lg" style="max-width: 400px;">
