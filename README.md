@@ -1,6 +1,7 @@
-## 🍴 Recipe App
+## 🍴 CookShare App
 
-A modern web application for managing recipes, built with native PHP using an MVC structure and both MongoDB and MySQL
+CookShare is a modern web application for managing recipes, built with native PHP using an MVC structure and both
+MongoDB and MySQL
 for data persistence.
 It allows users to create, manage, and share their culinary recipes.
 
