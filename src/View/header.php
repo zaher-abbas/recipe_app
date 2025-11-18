@@ -7,7 +7,7 @@ $connected = $user != "Guest";
 <header>
     <nav class="navbar navbar-expand-md p-4 text-light">
         <div class="container-fluid">
-            <a class="navbar-brand text-light fs-3" href="index.php">&#127860; MyRecipe</a>
+            <a class="navbar-brand text-light fs-2" href="index.php">&#127860; MyRecipe</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -16,14 +16,14 @@ $connected = $user != "Guest";
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <?php
                 if ($connected) {
-                    echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-                        <li class='nav-item me-2'>
-                            <a class='nav-link text-light p-3' aria-current='page' href='index.php?action=home'>Home</a>
+                    echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0 mb-md-0'>
+                        <li class='nav-item me-3 mb-sm-2 mb-lg-0 mb-md-0'>
+                            <a class='nav-link text-light text-bg-success rounded-2 p-3' aria-current='page' href='index.php?action=home'>Home &#127968;</a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link text-light text-bg-primary rounded-2 p-3' href='index.php?action=addrecipe'>Add Recipe ➕</a>
                         </li>
-                        <li class='nav-item ms-lg-3 mt-md-2 mt-sm-2 mt-lg-0'>
+                        <li class='nav-item ms-lg-3 mt-sm-2 mt-lg-0 mt-md-0'>
                         <a class='nav-link text-dark text-bg-warning rounded-2 p-3' href='index.php?action=favorites'>My Favorites &#11088;</a>
                         </li>
                     </ul>";
