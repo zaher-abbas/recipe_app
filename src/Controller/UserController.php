@@ -117,17 +117,20 @@ class UserController
         try {
             if (isset($_SESSION['userId'])) {
                 $user = $this->user->getUserById($_SESSION['userId']);
-            }
-            else
-            {
+            } else {
                 header('Location: index.php?action=login');
             }
-        }
-        catch (UserNotFound $e)
-        {
+        } catch (UserNotFound $e) {
             header('Location: index.php?action=login');
         }
         require_once './../View/profile.php';
+    }
+
+    public function logout(): void
+    {
+        setcookie("loggedOut", "true");
+        session_destroy();
+        Header('Location: index.php?action=home');
     }
 
     public function persistUserInfo(string $firstname, string $lastname, string $email): void

@@ -37,6 +37,9 @@ switch ($action) {
     case 'login':
         $userController->login();
         break;
+    case 'logout':
+        $userController->logout();
+        break;
     case 'addrecipe':
         $recipeController->addRecipe();
         break;

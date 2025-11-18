@@ -1,7 +1,6 @@
 <?php
 
 /** @var array|null $recipes */
-
 $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 ?>
 <main class="flex-grow-1">
@@ -95,3 +94,18 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
         });
     </script>
     <?php unset($_SESSION['toast']); endif; ?>
+<?php if ($_COOKIE['loggedOut'] === 'true'): ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Toastify({
+                text: "<?php echo htmlspecialchars('You have been logged out successfully.'); ?>",
+                duration: 3000,
+                gravity: "top",      // "top" ou "bottom"
+                position: "right",   // "left", "center" ou "right"
+                backgroundColor: "#eb253c",
+                close: true
+            }).showToast();
+        });
+    </script>
+    <?php setcookie('loggedOut', 'false'); endif; ?>
+

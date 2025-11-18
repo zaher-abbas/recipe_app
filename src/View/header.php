@@ -46,7 +46,7 @@ $connected = $user != "Guest";
 
                          <a href='index.php?action=profile' class='btn btn-info btn-outline-dark btn-md p-3 rounded-2 text-decoration-none mt-0 mt-md-3 mt-sm-3 fw-bold'>&#128100; My Profile</a>
                          <span class='nav-item'>
-                                <a class='btn btn-danger btn-outline-dark btn-md p-3 rounded-2  mt-0 mt-md-3 mt-sm-3 fw-bold' href='logout.php'>Log-out ↪</a>
+                                <a class='btn btn-danger btn-outline-dark btn-md p-3 rounded-2  mt-0 mt-md-3 mt-sm-3 fw-bold' href='index.php?action=logout'>Log-out ↪</a>
                         </span>";
                     }
                     ?>
