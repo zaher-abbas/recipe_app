@@ -8,8 +8,18 @@
     <div class="container">
         <section class="list-group">
             <?php foreach ($userRecipes as $recipe): ?>
-                <a href="index.php?action=recipe&id=<?= $recipe['id'] ?>"
-                   class="list-group-item list-group-item-action mb-3">&#129379; <?= $recipe['name'] ?></a>
+                <div class="list-group-item list-group-item-action mb-3 d-flex justify-content-between align-items-center cursor-pointer">
+                    <div class="w-50">
+                        <a class="text-decoration-none text-dark"
+                           href="index.php?action=recipe&id=<?= $recipe['id'] ?>">
+                            &#129379; <?= $recipe['name'] ?></a>
+                    </div>
+                    <div>
+                        <a href="index.php?action=editrecipe&id=<?= $recipe['id'] ?>" class="btn btn-warning">Edit</a>
+                        <a href="index.php?action=deleterecipe&id=<?= $recipe['id'] ?>"
+                           class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
             <?php endforeach; ?>
             <?php else: ?>
             <div class="container">

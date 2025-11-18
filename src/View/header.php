@@ -43,9 +43,10 @@ $connected = $user != "Guest";
                         </span>";
                     } else {
                         echo "
-                         <a href='index.php?action=profile' class='text-dark text-bg-info p-3 rounded-2 text-decoration-none'><strong>&#128100; $user</strong></a>
+
+                         <a href='index.php?action=profile' class='text-dark text-bg-info p-3 rounded-2 text-decoration-none mt-0 mt-md-3 mt-sm-3'><strong>&#128100; $user</strong></a>
                          <span class='nav-item'>
-                                <a class='nav-link text-bg-danger p-3 rounded-2' href='logout.php'>Log-out ↪</a>
+                                <a class='nav-link text-bg-danger p-3 rounded-2  mt-0 mt-md-3 mt-sm-3' href='logout.php'>Log-out ↪</a>
                         </span>";
                     }
                     ?>
