@@ -5,7 +5,7 @@
 ?>
 <main class="flex-grow-1">
     <section class='container my-4'>
-        <h1 class="text-center mb-5 display-6 fw-bold">&#11088; My Favorite Recipes &#11088;</h1>
+        <h1 class="text-center mb-5 fw-bold">&#11088; My Favorite Recipes &#11088;</h1>
         <?php if ($favoriteRecipes): ?>
         <div class="container page-favorites">
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 p-4 justify-content-center">
