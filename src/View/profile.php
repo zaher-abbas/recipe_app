@@ -17,7 +17,7 @@
                     <h3 class="card-title align-self-start">
                         &#128100; <?= htmlspecialchars($user["firstname"]) . " " . htmlspecialchars($user['lastname']) ?></h3>
                     <p class="card-text fs-3 align-self-start">📧 <?= htmlspecialchars($user["email"]) ?> </p>
-                    <a href="index.php" class="btn btn-outline-danger">Back</a>
+                    <a href="index.php" class="btn btn-outline-danger btn-lg">Back</a>
                 </div>
             </div>
         </div>

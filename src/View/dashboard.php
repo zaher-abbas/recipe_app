@@ -7,7 +7,9 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <main class="flex-grow-1">
     <?php if ($user != ""): ?>
     <section class='container my-4'>
-        <h1 class="text-center my-5 fw-bold">Discover Our Recipes - &#127860; &#129379;</h1>
+        <h4 class="text-center fw-bold mt-5 mb-3">Welcome &#128100; <?= $user ?></h4>
+        <h2 class="text-center mb-5 fw-bold">Discover Our Recipes - <span class="badge text-bg-success">🍽️</span>
+            <span class="badge text-bg-warning">🍹</span></h2>
         <form class="d-flex justify-content-center" role="search" method="get" action="index.php">
             <input type="hidden" name="action" value="search"/>
             <div class="input-group input-group-lg" style="max-width: 400px;">
@@ -33,15 +35,18 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
                              class="card-img-top rounded-start w-100 fixed-img" alt="">
                         <div class="card-body">
                             <h5 class="card-title fw-bold"><?= htmlspecialchars($recipe['name']) ?></h5>
-                            <p class="card-text">Submitted
-                                by <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?></p>
+                            <p class="card-text">Submitted by <span class="badge bg-light text-secondary border">
+                                            &#128100; <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?>
+                                        </span></p>
                             <div class="text-center my-4">
                                 <a href="index.php?action=recipe&id=<?= $recipe['id'] ?>" class="btn btn-success w-50">Check
                                     this Recipe</a>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <small class="text-body-secondary">Submitted on <?= $recipe['created_at'] ?></small>
+                            <small class="text-body-secondary">Submitted on
+                                <time class="fs-6"><?= date('d/m/Y', strtotime($recipe['created_at'])) ?></time>
+                            </small>
                         </div>
                     </div>
                 </div>

@@ -12,8 +12,8 @@ It allows users to create, manage, and share their culinary recipes.
 - Add images and rich descriptions to recipes
 - Comment on recipes and view discussions
 - Personal dashboard and profile management
-- Search and browse recipes
-- Add recipes to your favorites.
+- Search and browse recipes 🔍
+- Add recipes to your favorites ⭐
 - Uses MySQL (PDO) and MongoDB drivers
 - Simple, modular MVC-like structure (Controllers, Models, Views)
 

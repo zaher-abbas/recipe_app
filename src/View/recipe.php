@@ -11,31 +11,52 @@
                 <div class="row g-1">
                     <div class="col-lg-4 col-md-4 d-flex align-items-center">
                         <img src="<?= './../View/img/' . $recipe['image']; ?>" class="img-fluid rounded-start"
-                             alt="...">
+                             alt="<?= htmlspecialchars($recipe['name']) ?>">
                     </div>
                     <div class="col-lg-8 col-md-8">
                         <div class="card-body">
                             <div class="d-flex justify-content-lg-end justify-content-md-center justify-content-sm-center mb-md-4 mb-sm-4">
                                 <?php if (!$isRecipeFavorite): ?>
                                     <a href="index.php?action=addtofavorites&id=<?= $recipe['id'] ?>"
-                                       class="btn btn-warning btn-md mt-2">
+                                       class="btn btn-warning btn-lg my-4">
                                         ★ Add to Favorites
                                     </a>
                                 <?php else: ?>
                                     <a href="index.php?action=removefromfavorites&id=<?= $recipe['id'] ?>"
-                                       class="btn btn-danger btn-sm mt-2">
+                                       class="btn btn-danger btn-lg my-4">
                                         ★ Remove from Favorites
                                     </a>
                                 <?php endif; ?>
                             </div>
-                            <h3 class="card-title"><?= htmlspecialchars($recipe['name']) ?></h3>
-                            <h6 class="card-title mb-4"><?= 'Submitted by: ' . htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) . ' on ' . $recipe['created_at'] ?></h6>
+                            <h1 class="card-title"><?= htmlspecialchars($recipe['name']) ?></h1>
+                            <h5 class="my-4">
+                                <span>
+                                    <span>Submitted by</span>
+                                    <span>
+                                        <span class="badge bg-light text-secondary border">
+                                            &#128100; <?= htmlspecialchars($recipe['firstname']) . ' ' . htmlspecialchars($recipe['lastname']) ?>
+                                        </span>
+                                    </span>
+                                    <span>
+                                        on
+                                        <time class="badge bg-light text-secondary border">
+                                            <?= htmlspecialchars(date('d/m/Y', strtotime($recipe['created_at']))) ?>
+                                        </time>
+                                    </span>
+                                </span>
+                            </h5>
                             <p class="card-text"><?= htmlspecialchars($recipe['description']) ?></p>
                         </div>
                     </div>
                 </div>
             </div>
         <?php endif; ?>
+        <div class="d-flex justify-content-center my-4">
+            <a href="index.php?action=home"
+               class="btn btn-outline-danger btn-lg">
+                Back
+            </a>
+        </div>
         <form method="post" action="" class="my-4 p-3 rounded">
             <h6 class="mb-4">Rate this recipe and leave a comment:</h6>
             <div class="mb-4">

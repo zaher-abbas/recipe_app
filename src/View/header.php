@@ -18,16 +18,16 @@ $connected = $user != "Guest";
                 if ($connected) {
                     echo "<ul class='navbar-nav me-auto mb-2 mb-lg-0 mb-md-0'>
                         <li class='nav-item me-3 mb-sm-2 mb-lg-0 mb-md-0'>
-                            <a class='btn btn-success btn-outline-dark rounded-2 p-3 w-100' aria-current='page' href='index.php?action=home'>&#127968; Home</a>
+                            <a class='btn btn-success btn-outline-dark btn-md rounded-2 p-3 w-100 fw-bold' aria-current='page' href='index.php?action=home'>&#127968; Home</a>
                         </li>
                         <li class='nav-item'>
-                            <a class='btn btn-primary btn-outline-dark rounded-2 p-3 w-100' href='index.php?action=addrecipe'>➕ Add Recipe</a>
+                            <a class='btn btn-primary btn-outline-dark btn-md rounded-2 p-3 w-100 fw-bold' href='index.php?action=addrecipe'>➕ Add Recipe</a>
                         </li>
                         <li class='nav-item ms-lg-3 mt-sm-2 mt-lg-0 mt-md-0'>
-                        <a class='btn btn-warning btn-outline-dark rounded-2 p-3 w-100' href='index.php?action=favorites'>&#11088; My Favorites</a>
+                        <a class='btn btn-warning btn-outline-dark btn-md rounded-2 p-3 w-100 fw-bold' href='index.php?action=favorites'>&#11088; My Favorites</a>
                         </li>
                           <li class='nav-item ms-lg-3 mt-sm-2 mt-lg-0 mt-md-0'>
-                        <a class='btn btn-info btn-outline-dark rounded-2 p-3 w-100' href='index.php?action=userrecipes'>&#129379; My Recipes</a>
+                        <a class='btn btn-info btn-outline-dark btn-md rounded-2 p-3 w-100 fw-bold' href='index.php?action=userrecipes'>&#129379; My Recipes</a>
                         </li>
                     </ul>";
                 }
@@ -36,17 +36,17 @@ $connected = $user != "Guest";
                     <?php
                     if (!$connected) {
                         echo "<span class='nav-item'>
-                                <a class='btn btn-primary btn-outline-light p-3 rounded-2' href='index.php?action=register'>&#10133; Register</a>
+                                <a class='btn btn-primary btn-outline-light btn-md p-3 rounded-2 fw-bold' href='index.php?action=register'>&#10133; Register</a>
                         </span>
                         <span class='nav-item'>
-                                <a class='btn btn-success btn-outline-light p-3 rounded-2' href='index.php?action=login'>&#128273; Login</a>
+                                <a class='btn btn-success btn-outline-light btn-md p-3 rounded-2 fw-bold' href='index.php?action=login'>&#128273; Login</a>
                         </span>";
                     } else {
                         echo "
 
-                         <a href='index.php?action=profile' class='btn btn-info btn-outline-dark p-3 rounded-2 text-decoration-none mt-0 mt-md-3 mt-sm-3'><strong>&#128100; $user</strong></a>
+                         <a href='index.php?action=profile' class='btn btn-info btn-outline-dark btn-md p-3 rounded-2 text-decoration-none mt-0 mt-md-3 mt-sm-3 fw-bold'>&#128100; My Profile</a>
                          <span class='nav-item'>
-                                <a class='btn btn-danger btn-outline-dark p-3 rounded-2  mt-0 mt-md-3 mt-sm-3' href='logout.php'>Log-out ↪</a>
+                                <a class='btn btn-danger btn-outline-dark btn-md p-3 rounded-2  mt-0 mt-md-3 mt-sm-3 fw-bold' href='logout.php'>Log-out ↪</a>
                         </span>";
                     }
                     ?>
