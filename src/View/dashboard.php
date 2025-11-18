@@ -61,7 +61,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
                     <div class="container">
                         <div class="row justify-content-center text-center">
                             <div class="col-lg-8">
-                                <h1 class="display-4 fw-bold mb-4">&#127860; Welcome to CookShare App</h1>
+                                <h1 class="display-4 fw-bold mb-4">Welcome to CookShare App &#129379;</h1>
                                 <p class="lead mb-5">View recipes from all over the world, shared by everyone, you can
                                     add yours too!</p>
                                 <p class="lead mb-5">Try it...it is Fun!</p>
