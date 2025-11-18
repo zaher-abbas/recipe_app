@@ -1,6 +1,6 @@
 <main class="flex-grow-1">
     <section class="container my-4">
-        <h1 class="text-center alert alert-light">Log-in to your account</h1>
+        <h3 class="text-center alert alert-info">Log-in to your account</h3>
         <form class="auth-form p-4" action="" method="post" class="p-3 rounded">
             <div class="mb-4">
                 <label for="email" class="form-label">Email address <span class="text-danger">*</span></label>

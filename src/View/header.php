@@ -36,10 +36,10 @@ $connected = $user != "Guest";
                     <?php
                     if (!$connected) {
                         echo "<span class='nav-item'>
-                                <a class='btn btn-primary btn-outline-light btn-md p-3 rounded-2 fw-bold' href='index.php?action=register'>&#10133; Register</a>
+                                <a class='btn btn-primary btn-outline-light btn-md p-3 rounded-2 fw-bold mt-lg-0 mt-md-0' href='index.php?action=register'>&#10133; Register</a>
                         </span>
                         <span class='nav-item'>
-                                <a class='btn btn-success btn-outline-light btn-md p-3 rounded-2 fw-bold' href='index.php?action=login'>&#128273; Login</a>
+                                <a class='btn btn-success btn-outline-light btn-md p-3 rounded-2 fw-bold mt-lg-0 mt-md-0' href='index.php?action=login'>&#128273; Login</a>
                         </span>";
                     } else {
                         echo "

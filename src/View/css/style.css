@@ -3,13 +3,18 @@ nav.navbar {
     color: #ffffff;
 }
 
+footer {
+    background-color: #2C3E50;
+    color: #ffffff;
+}
+
 .hero-section {
     background-color: #1e6b5c;
     color: #ffffff;
 }
 
 .auth-form {
-    background-color: #ffffff;
+    background-color: #FFF8F0;
     color: #4a4a4a;
 }
 
