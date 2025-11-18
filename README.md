@@ -7,10 +7,10 @@ It allows users to create, manage, and share their culinary recipes.
 
 ## ✨Features
 
-- User registration and authentication
-- Create, edit, and delete recipes
+- User registration and authentication 👤
+- Create, edit, and delete recipes 🥣
 - Add images and rich descriptions to recipes
-- Comment on recipes and view discussions
+- Comment on recipes and view discussions 🗨
 - Personal dashboard and profile management
 - Search and browse recipes 🔍
 - Add recipes to your favorites ⭐
