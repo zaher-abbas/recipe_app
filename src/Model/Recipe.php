@@ -77,9 +77,19 @@ class Recipe
         $statement->execute();
         return $statement->fetchColumn() > 0;
     }
+
     public function getFavoritesByUserId(int $userId): array|null
     {
         $query = "SELECT r.*, u.firstname, u.lastname FROM recipe r JOIN favorite f ON f.recipe_id = r.id JOIN `user` u ON u.id = r.user_id WHERE f.user_id = :user_id;";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':user_id', $userId);
+        $statement->execute();
+        return $statement->fetchAll() ?? null;
+    }
+
+    public function getRecipesByUserId(int $userId): array|null
+    {
+        $query = "SELECT r.*, u.firstname, u.lastname FROM recipe r JOIN `user` u ON u.id = r.user_id WHERE r.user_id = :user_id;";
         $statement = $this->db->prepare($query);
         $statement->bindValue(':user_id', $userId);
         $statement->execute();

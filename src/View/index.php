@@ -61,6 +61,9 @@ switch ($action) {
     case 'favorites':
         $recipeController->showFavorites();
         break;
+    case 'userrecipes':
+        $recipeController->listUserRecipes();
+        break;
     default:
         require_once 'dashboard.php';
         break;

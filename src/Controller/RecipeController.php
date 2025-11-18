@@ -73,7 +73,7 @@ class RecipeController
                     header('Location: index.php?action=recipe&id=' . $id);
                 }
             }
-            require_once './../View/recipe.php';
+            require_once './../View/recipedetails.php';
         }
     }
 
@@ -117,6 +117,12 @@ class RecipeController
     {
         $favoriteRecipes = $this->recipe->getFavoritesByUserId($_SESSION['userId']);
         require_once './../View/favorites.php';
+    }
+
+    public function listUserRecipes(): void
+    {
+        $userRecipes = $this->recipe->getRecipesByUserId($_SESSION['userId']);
+        require_once './../View/userrecipes.php';
     }
 }
 

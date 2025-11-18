@@ -15,10 +15,10 @@
                     </div>
                     <div class="col-lg-8 col-md-8">
                         <div class="card-body">
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-lg-end justify-content-md-center justify-content-sm-center mb-md-4 mb-sm-4">
                                 <?php if (!$isRecipeFavorite): ?>
                                     <a href="index.php?action=addtofavorites&id=<?= $recipe['id'] ?>"
-                                       class="btn btn-warning btn-sm mt-2">
+                                       class="btn btn-warning btn-md mt-2">
                                         ★ Add to Favorites
                                     </a>
                                 <?php else: ?>
