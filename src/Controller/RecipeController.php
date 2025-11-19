@@ -110,7 +110,7 @@ class RecipeController
         if ($id) {
             $this->recipe->removeRecipeFromFavorites($id, $_SESSION['userId']);
             $_SESSION['toast'] = [
-                'type' => 'success',
+                'type' => 'danger',
                 'message' => 'Recipe removed from favorites successfully.'
             ];
             header('Location: index.php?action=recipe&id=' . $id);

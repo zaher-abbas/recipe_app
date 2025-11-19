@@ -114,7 +114,7 @@
                 duration: 3000,
                 gravity: "top",      // "top" ou "bottom"
                 position: "right",   // "left", "center" ou "right"
-                backgroundColor: "<?php echo ($_SESSION['toast']['type'] ?? 'info') === 'success' ? '#16a34a' : '#2563eb'; ?>",
+                backgroundColor: "<?php echo ($_SESSION['toast']['type'] ?? 'danger') === 'success' ? '#16a34a' : '#dc3545'; ?>",
                 close: true
             }).showToast();
         });
