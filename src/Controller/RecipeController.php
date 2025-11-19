@@ -20,7 +20,13 @@ class RecipeController
 
     public function editRecipe(): void
     {
+        $recipe = null;
+        $id = $_GET['id'] ?? null;
         $action = $_GET['action'] ?? null;
+
+        if ($action == 'updaterecipe') {
+            $recipe = $this->recipe->getRecipeById($id);
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $rname = isset($_POST['rname']) ? trim($_POST['rname']) : null;
@@ -48,12 +54,18 @@ class RecipeController
                         'message' => 'Recipe added successfully.'
                     ];
                 } elseif ($action == 'updaterecipe') {
-                    $id = $_GET['id'] ?? null;
                     $this->recipe->updateRecipe($id, $rname, $image_name, $rdescription);
+                    $_SESSION['toast'] = [
+                        'type' => 'success',
+                        'message' => 'Recipe edited successfully.'
+                    ];
                 }
             }
-
-            header('Location: index.php?action=home');
+            if ($action == 'addrecipes') {
+                header('Location: index.php?action=home');
+            } elseif ($action == 'updaterecipe') {
+                header('Location: index.php?action=userrecipes');
+            }
         } else {
             setcookie("ErrorAddingRecipe", "Error; Please fill all the required fields before submitting!");
             $_COOKIE["ErrorAddingRecipe"] = "Error; Please fill all the required fields before submitting!";

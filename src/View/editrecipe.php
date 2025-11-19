@@ -1,4 +1,6 @@
 <?php
+/** @var array|null $recipe */
+
 unset($_COOKIE['ErrorAddingRecipe']);
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 ?>
@@ -13,7 +15,8 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
             <div class="mb-4">
                 <label for="rname" class="form-label">Recipe's Name <span class="text-danger">*</span>
                 </label>
-                <input type="text" class="form-control" id="rname" name="rname" placeholder="" required maxlength="50">
+                <input type="text" class="form-control" id="rname" name="rname" placeholder="" required maxlength="50"
+                       value="<?= $recipe ? htmlspecialchars($recipe['name']) : ''; ?>">
             </div>
             <div class="mb-4">
                 <label for="rimage" class="form-label">Recipe's Image <span
@@ -25,7 +28,9 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
             <div class="mb-4">
                 <label for="rdescription" class="form-label">Recipe Description <span class="text-danger">*</span>
                 </label>
-                <textarea class="form-control" id="rdescription" name="rdescription" rows="8" required></textarea>
+                <textarea class="form-control" id="rdescription" name="rdescription" rows="8" required>
+                    <?= $recipe ? htmlspecialchars(trim($recipe['description'])) : ''; ?>
+                </textarea>
             </div>
             <?php
             if (isset($_COOKIE['ErrorAddingRecipe'])) {
