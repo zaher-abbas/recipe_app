@@ -135,8 +135,8 @@ class RecipeController
         if ($id) {
             $this->recipe->deleteRecipe($id);
             $_SESSION['toast'] = [
-                'type' => 'success',
-                'message' => 'Recipe deleted successfully.'
+                'type' => 'danger',
+                'message' => 'Recipe was deleted successfully.'
             ];
             header('Location: index.php?action=userrecipes');
         }

@@ -3,7 +3,7 @@ unset($_COOKIE['ErrorAddingRecipe']);
 ?>
 <main class="flex-grow-1">
     <section class="container my-4">
-        <h1 class="text-center alert alert-light">&#10133; Add New Recipe</h1>
+        <h3 class="text-center alert alert-light">&#10133; Add New Recipe</h3>
         <form method="post" action="" enctype="multipart/form-data" class="p-3 rounded">
             <div class="mb-4">
                 <label for="rname" class="form-label">Recipe's Name <span class="text-danger">*</span>
