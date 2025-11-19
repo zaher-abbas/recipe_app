@@ -30,8 +30,14 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
             <?php foreach ($recipes as $recipe): ?>
                 <div class="col">
                     <div class="card h-100 recipe-card bg-sage-light text-forest border border-secondary-subtle border-start-0 rounded-end border-4 mb-3 p-4">
-                        <img src="./../View/img/<?= $recipe['image'] ?>"
-                             class="card-img-top rounded-start w-100 fixed-img" alt="">
+                        <?php if ($recipe['image'] === ''): ?>
+                            <img src="./../View/img/recipe_placeholder.png"
+                                 class="card-img-top rounded-start w-100 fixed-img" alt="recipe image placeholder">
+                        <?php else: ?>
+                            <img src="./../View/img/<?= $recipe['image'] ?>"
+                                 class="card-img-top rounded-start w-100 fixed-img"
+                                 alt="Image of recipe <?= htmlspecialchars($recipe['name']) ?>">
+                        <?php endif; ?>
                         <div class="card-body">
                             <h5 class="card-title fw-bold"><?= htmlspecialchars($recipe['name']) ?></h5>
                             <p class="card-text">Submitted by <span class="badge bg-light text-secondary border">
@@ -94,7 +100,7 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
         });
     </script>
     <?php unset($_SESSION['toast']); endif; ?>
-<?php if ($_COOKIE['loggedOut'] === 'true'): ?>
+<?php if (isset($_COOKIE['loggedOut']) && $_COOKIE['loggedOut'] === 'true'): ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Toastify({

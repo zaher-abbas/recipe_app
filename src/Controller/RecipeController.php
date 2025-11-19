@@ -25,16 +25,20 @@ class RecipeController
             $rimage = $_FILES['rimage'] ?? null;
             $rdescription = isset($_POST['rdescription']) ? trim($_POST['rdescription']) : null;
 
-            if ($rname && $rimage && $rdescription) {
+            if ($rname && $rdescription) {
 
-                $image_name = $rimage['name'];
-                $image_name = time() . $image_name;
-                $folderName = './../View/img/';
-                if (!is_dir($folderName)) {
-                    mkdir($folderName, 0775, true);
+                if ($rimage['error'] == 0) {
+                    $image_name = $rimage['name'];
+                    $image_name = time() . $image_name;
+                    $folderName = './../View/img/';
+                    if (!is_dir($folderName)) {
+                        mkdir($folderName, 0775, true);
+                    }
+
+                    move_uploaded_file($rimage['tmp_name'], $folderName . $image_name);
+                } else {
+                    $image_name = '';
                 }
-
-                move_uploaded_file($rimage['tmp_name'], $folderName . $image_name);
                 $this->recipe->createRecipe($_SESSION['userId'], $rname, $image_name, $rdescription);
                 $_SESSION['toast'] = [
                     'type' => 'success',
@@ -42,8 +46,8 @@ class RecipeController
                 ];
                 header('Location: index.php?action=home');
             } else {
-                setcookie("ErrorAddingRecipe", "Error; Please fill all the fields before submitting!");
-                $_COOKIE["ErrorAddingRecipe"] = "Error; Please fill all the fields before submitting!";
+                setcookie("ErrorAddingRecipe", "Error; Please fill all the required fields before submitting!");
+                $_COOKIE["ErrorAddingRecipe"] = "Error; Please fill all the required fields before submitting!";
             }
 
         }
