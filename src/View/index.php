@@ -21,7 +21,7 @@ $action = $_GET['action'] ?? 'home';
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <title>MyRecipe - App</title>
+    <title>CookShare - App</title>
 </head>
 <body class="bg-dark-subtle d-flex flex-column min-vh-100">
 </body>
