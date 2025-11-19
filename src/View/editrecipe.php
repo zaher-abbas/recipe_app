@@ -11,7 +11,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
         <?php elseif ($action == 'updaterecipe'): ?>
             <h3 class="text-center alert alert-light">&#9998; Edit Recipe</h3>
         <?php endif; ?>
-        <form method="post" action="" enctype="multipart/form-data" class="p-3 rounded">
+        <form class="edit-form p-5" method="post" action="" enctype="multipart/form-data" class="p-3 rounded">
             <div class="mb-4">
                 <label for="rname" class="form-label">Recipe's Name <span class="text-danger">*</span>
                 </label>
@@ -20,10 +20,19 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
             </div>
             <div class="mb-4">
                 <label for="rimage" class="form-label">Recipe's Image <span
-                            class="badge rounded-pill bg-secondary ms-2">Optional</span>
+                            class="badge rounded-pill bg-secondary ms-1">Optional</span>
 
                 </label>
-                <input class="form-control" type="file" id="rimage" name="rimage" accept="image/*">
+                <input class="form-control" type="file" id="rimage" name="rimage" accept="image/*"
+            </div>
+            <div class="my-3 p-2 d-flex flex-column justify-content-center align-items-start">
+                <?php if ($recipe && $recipe['image'] != ''): ?>
+                    <p class="text-center badge text-bg-success p-2">Current Image</p>
+                    <p class="badge text-bg-info fst-italic p-2">If you don't upload a new image, the current one will
+                        be
+                        kept!</p>
+                    <img src="./../View/img/<?= $recipe['image']; ?>" alt="Recipe Image" class="w-25 rounded mb-2">
+                <?php endif; ?>
             </div>
             <div class="mb-4">
                 <label for="rdescription" class="form-label">Recipe Description <span class="text-danger">*</span>

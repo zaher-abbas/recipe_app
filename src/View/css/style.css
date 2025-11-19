@@ -13,7 +13,7 @@ footer {
     color: #ffffff;
 }
 
-.auth-form {
+.auth-form, .edit-form {
     background-color: #FFF8F0;
     color: #4a4a4a;
 }

@@ -54,7 +54,11 @@ class RecipeController
                         'message' => 'Recipe added successfully.'
                     ];
                 } elseif ($action == 'updaterecipe') {
-                    $this->recipe->updateRecipe($id, $rname, $image_name, $rdescription);
+                    if ($image_name != '') {
+                        $this->recipe->updateRecipe($id, $rname, $image_name, $rdescription);
+                    } else {
+                        $this->recipe->updateRecipe($id, $rname, $recipe['image'], $rdescription);
+                    }
                     $_SESSION['toast'] = [
                         'type' => 'success',
                         'message' => 'Recipe edited successfully.'
