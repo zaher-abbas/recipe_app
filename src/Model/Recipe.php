@@ -95,4 +95,12 @@ class Recipe
         $statement->execute();
         return $statement->fetchAll() ?? null;
     }
+
+    public function deleteRecipe(int $recipeId): void
+    {
+        $query = "DELETE FROM recipe WHERE id = :recipeId";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':recipeId', $recipeId);
+        $statement->execute();
+    }
 }

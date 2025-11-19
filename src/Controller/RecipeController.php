@@ -128,6 +128,20 @@ class RecipeController
         $userRecipes = $this->recipe->getRecipesByUserId($_SESSION['userId']);
         require_once './../View/userrecipes.php';
     }
+
+    public function deleteRecipe(): void
+    {
+        $id = $_GET['id'] ?? null;
+        if ($id) {
+            $this->recipe->deleteRecipe($id);
+            $_SESSION['toast'] = [
+                'type' => 'success',
+                'message' => 'Recipe deleted successfully.'
+            ];
+            header('Location: index.php?action=userrecipes');
+        }
+
+    }
 }
 
 

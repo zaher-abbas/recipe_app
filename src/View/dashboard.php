@@ -6,7 +6,9 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
 <main class="flex-grow-1">
     <?php if ($user != ""): ?>
     <section class='container my-4'>
-        <h4 class="text-center fw-bold mt-5 mb-3">Welcome &#128100; <?= $user ?></h4>
+        <h4 class="text-center fw-bold mt-5 mb-3">Welcome back <strong
+                    class="badge text-bg-success">&#128100; <?= htmlspecialchars($user) ?></strong>
+        </h4>
         <h2 class="text-center mb-5 fw-bold">Discover Our Recipes - <span class="badge text-bg-success">🍽️</span>
             <span class="badge text-bg-warning">🍹</span></h2>
         <form class="d-flex justify-content-center" role="search" method="get" action="index.php">
