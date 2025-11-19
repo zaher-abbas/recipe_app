@@ -1,9 +1,14 @@
 <?php
 unset($_COOKIE['ErrorAddingRecipe']);
+$action = isset($_GET['action']) ? $_GET['action'] : '';
 ?>
 <main class="flex-grow-1">
     <section class="container my-4">
-        <h3 class="text-center alert alert-light">&#10133; Add New Recipe</h3>
+        <?php if ($action == 'addrecipe'): ?>
+            <h3 class="text-center alert alert-light">&#10133; Add New Recipe</h3>
+        <?php elseif ($action == 'updaterecipe'): ?>
+            <h3 class="text-center alert alert-light">&#9998; Edit Recipe</h3>
+        <?php endif; ?>
         <form method="post" action="" enctype="multipart/form-data" class="p-3 rounded">
             <div class="mb-4">
                 <label for="rname" class="form-label">Recipe's Name <span class="text-danger">*</span>
@@ -29,8 +34,13 @@ unset($_COOKIE['ErrorAddingRecipe']);
             }
             ?>
             <div class="text-center">
-                <button type="submit" class="btn btn-success">Add Recipe</button>
-            </div>
+                <?php if ($action == 'addrecipe'): ?>
+                    <button type="submit" class="btn btn-success">Add Recipe</button>
+                    <a href="index.php?action=home" class="ms-3 btn btn-outline-danger btn-md">Back</a>
+                <?php elseif ($action == 'updaterecipe'): ?>
+                    <button type="submit" class="btn btn-success">Edit Recipe</button>
+                    <a href="index.php?action=userrecipes" class="ms-3 btn btn-outline-danger btn-md">Back</a>
+                <?php endif; ?></div>
         </form>
     </section>
 </main>

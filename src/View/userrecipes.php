@@ -8,14 +8,14 @@
     <div class="container">
         <section class="list-group">
             <?php foreach ($userRecipes as $recipe): ?>
-                <div class="list-group-item list-group-item-action mb-3 d-flex justify-content-between align-items-center cursor-pointer">
+                <div class="list-group-item list-group-item-action p-3 mb-3 d-flex justify-content-between align-items-center cursor-pointer">
                     <div class="w-50">
                         <a class="text-decoration-none text-dark"
                            href="index.php?action=recipe&id=<?= $recipe['id'] ?>">
                             &#129379; <?= $recipe['name'] ?></a>
                     </div>
                     <div>
-                        <a href="index.php?action=editrecipe&id=<?= $recipe['id'] ?>" class="btn btn-warning">Edit</a>
+                        <a href="index.php?action=updaterecipe&id=<?= $recipe['id'] ?>" class="btn btn-warning">Edit</a>
                         <button data-bs-toggle="modal" data-bs-target="#deleteModal"
                                 class="btn btn-danger">Delete
                         </button>

@@ -18,8 +18,10 @@ class RecipeController
         $this->recipe = new Recipe($db);
     }
 
-    public function addRecipe(): void
+    public function editRecipe(): void
     {
+        $action = $_GET['action'] ?? null;
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $rname = isset($_POST['rname']) ? trim($_POST['rname']) : null;
             $rimage = $_FILES['rimage'] ?? null;
@@ -39,19 +41,25 @@ class RecipeController
                 } else {
                     $image_name = '';
                 }
-                $this->recipe->createRecipe($_SESSION['userId'], $rname, $image_name, $rdescription);
-                $_SESSION['toast'] = [
-                    'type' => 'success',
-                    'message' => 'Recipe added successfully.'
-                ];
-                header('Location: index.php?action=home');
-            } else {
-                setcookie("ErrorAddingRecipe", "Error; Please fill all the required fields before submitting!");
-                $_COOKIE["ErrorAddingRecipe"] = "Error; Please fill all the required fields before submitting!";
+                if ($action == 'addrecipe') {
+                    $this->recipe->createRecipe($_SESSION['userId'], $rname, $image_name, $rdescription);
+                    $_SESSION['toast'] = [
+                        'type' => 'success',
+                        'message' => 'Recipe added successfully.'
+                    ];
+                } elseif ($action == 'updaterecipe') {
+                    $id = $_GET['id'] ?? null;
+                    $this->recipe->updateRecipe($id, $rname, $image_name, $rdescription);
+                }
             }
 
+            header('Location: index.php?action=home');
+        } else {
+            setcookie("ErrorAddingRecipe", "Error; Please fill all the required fields before submitting!");
+            $_COOKIE["ErrorAddingRecipe"] = "Error; Please fill all the required fields before submitting!";
         }
-        require_once './../View/addrecipe.php';
+
+        require_once './../View/editrecipe.php';
     }
 
     public function showAllRecipes(): void
@@ -142,6 +150,7 @@ class RecipeController
         }
 
     }
+
 }
 
 

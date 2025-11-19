@@ -103,4 +103,15 @@ class Recipe
         $statement->bindValue(':recipeId', $recipeId);
         $statement->execute();
     }
+
+    public function updateRecipe(int $recipeId, string $name, string $image, string $description): void
+    {
+        $query = "UPDATE recipe SET name = :name, image = :image, description = :description WHERE id = :recipeId";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(':name', $name);
+        $statement->bindValue(':image', $image);
+        $statement->bindValue(':description', $description);
+        $statement->bindValue(':recipeId', $recipeId);
+        $statement->execute();
+    }
 }

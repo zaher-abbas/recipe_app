@@ -41,7 +41,8 @@ switch ($action) {
         $userController->logout();
         break;
     case 'addrecipe':
-        $recipeController->addRecipe();
+    case 'updaterecipe':
+        $recipeController->editRecipe();
         break;
     case 'home':
         $recipeController->showAllRecipes();
