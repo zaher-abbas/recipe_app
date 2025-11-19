@@ -94,8 +94,8 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
             Toastify({
                 text: "<?php echo htmlspecialchars($_SESSION['toast']['message'] ?? ''); ?>",
                 duration: 3000,
-                gravity: "top",      // "top" ou "bottom"
-                position: "right",   // "left", "center" ou "right"
+                gravity: "top",
+                position: "right",
                 backgroundColor: "<?php echo ($_SESSION['toast']['type'] ?? 'info') === 'success' ? '#16a34a' : '#2563eb'; ?>",
                 close: true
             }).showToast();
@@ -108,8 +108,8 @@ $user = isset($_SESSION['userName']) ? $_SESSION['userName'] : "";
             Toastify({
                 text: "<?php echo htmlspecialchars('You have been logged out successfully.'); ?>",
                 duration: 3000,
-                gravity: "top",      // "top" ou "bottom"
-                position: "right",   // "left", "center" ou "right"
+                gravity: "top",
+                position: "right",
                 backgroundColor: "#eb253c",
                 close: true
             }).showToast();

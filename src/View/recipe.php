@@ -112,8 +112,8 @@
             Toastify({
                 text: "<?php echo htmlspecialchars($_SESSION['toast']['message'] ?? ''); ?>",
                 duration: 3000,
-                gravity: "top",      // "top" ou "bottom"
-                position: "right",   // "left", "center" ou "right"
+                gravity: "top",
+                position: "right",
                 backgroundColor: "<?php echo ($_SESSION['toast']['type'] ?? 'danger') === 'success' ? '#16a34a' : '#dc3545'; ?>",
                 close: true
             }).showToast();
