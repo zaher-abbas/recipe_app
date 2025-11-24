@@ -65,7 +65,7 @@ class RecipeController
                     ];
                 }
             }
-            if ($action == 'addrecipes') {
+            if ($action == 'addrecipe') {
                 header('Location: index.php?action=home');
             } elseif ($action == 'updaterecipe') {
                 header('Location: index.php?action=userrecipes');
